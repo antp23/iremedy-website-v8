@@ -106,14 +106,13 @@
 
     /* ══ PANELS ══ */
     .panel { min-height: auto; display: flex; align-items: stretch; padding: 0; position: relative; overflow: hidden; }
-    .panel-inner { width: 100%; display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
-    .panel-text { padding: 5rem 6vw 5rem; position: relative; z-index: 1; }
-    .panel-img { position: relative; overflow: hidden; min-height: 480px; }
-    .panel-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .panel-inner { width: 100%; display: grid; grid-template-columns: 55fr 45fr; align-items: stretch; max-width: 1440px; margin: 0 auto; }
+    .panel-text { padding: 5rem 5rem 5rem 8vw; position: relative; z-index: 1; max-width: 680px; }
+    .panel-img { position: relative; overflow: hidden; min-height: 500px; }
+    .panel-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .panel-img-overlay { position: absolute; inset: 0; }
-    /* panel-1 hero is still full dark, text centered */
-    .panel-1 .panel-inner { grid-template-columns: 1fr; }
-    .panel-1 .panel-text { padding: 120px 6vw 5rem; }
+    .panel-1 .panel-inner { grid-template-columns: 55fr 45fr; max-width: 100%; }
+    .panel-1 .panel-text { padding: 120px 5rem 5rem 8vw; max-width: 660px; }
 
     /* grid overlays */
     .grid-dk {
@@ -332,10 +331,10 @@
     /* ══ RESPONSIVE ══ */
     @media (max-width: 900px) {
       .nav-links { display: none; }
-      .panel-inner { grid-template-columns: 1fr !important; }
+      .panel-inner { grid-template-columns: 1fr !important; max-width: 100% !important; }
       .panel-img { min-height: 280px; order: 0 !important; }
-      .panel-text { padding: 3.5rem 5vw; }
-      .panel { padding: 0 5vw 6vh; }
+      .panel-text { padding: 3.5rem 5vw !important; max-width: 100% !important; }
+      .panel { padding: 0; }
       .p2-grid { grid-template-columns: 1fr; gap: 3rem; }
       .stats-strip { grid-template-columns: 1fr 1fr; }
       .stat-block:first-child { padding-left: 5vw; }
@@ -354,7 +353,7 @@
 <!-- ══ NAV ══ -->
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" onclick="showPage('home')" style="display:flex;align-items:center;"><img src="assets/iremedy-logo.png" alt="iRemedy" style="height:28px;width:auto;object-fit:contain;"></a>
+    <a class="nav-logo" onclick="showPage('home')" style="display:flex;align-items:center;"><img src="assets/iremedy-logo.png" alt="iRemedy" style="height:38px;width:auto;"></a>
     <ul class="nav-links">
       <li class="nav-item">
         <button>Solutions <svg class="nav-chevron" viewBox="0 0 9 9" fill="none"><path d="M1 3l3.5 3.5L8 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -447,9 +446,6 @@
         <button class="btn btn-ink" onclick="showPage('technology')">Explore the Platform →</button>
       </div>
       <div style="display:flex;flex-direction:column;gap:1.25rem;">
-        <div class="panel-img" style="min-height:220px;position:relative;overflow:hidden;border-radius:0;">
-          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&q=80&fit=crop" alt="Technology platform" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-        </div>
         <div class="terminal">
           <div class="t-bar">
             <div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div>
