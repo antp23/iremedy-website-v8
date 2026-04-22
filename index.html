@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iRemedy Healthcare Companies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:       #f2ede4;
+      --bg-2:     #ede8df;
+      --bg-3:     #e6e0d5;
+      --ink:      #1c1f24;
+      --ink-2:    #3a3f47;
+      --ink-3:    #6b7280;
+      --teal:     #1a7a99;
+      --teal-dim: rgba(26,122,153,0.09);
+      --teal-dk:  #155f78;
+      --gold:     #8a6a10;
+      --red:      #c8160a;
+      --border:   rgba(28,31,36,0.11);
+      --border-2: rgba(28,31,36,0.05);
+      --rule:     rgba(28,31,36,0.14);
+      --serif:    'Playfair Display', Georgia, serif;
+      --mono:     'IBM Plex Mono', monospace;
+      --sans:     'Inter', sans-serif;
+      --hero-bg:  #0f1318;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    /* ══ NAV ══ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      height: 60px; display: flex; align-items: center;
+      padding: 0 6vw;
+      background: rgba(242,237,228,0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--mono); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); cursor: pointer; text-decoration: none; }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+    .nav-item { position: relative; }
+    .nav-item > button {
+      font-family: var(--mono); font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--ink-3); background: none; border: none; cursor: pointer;
+      padding: 8px 14px; display: flex; align-items: center; gap: 4px;
+      transition: color 0.15s;
+    }
+    .nav-item > button:hover { color: var(--teal); }
+    .nav-chevron { width: 9px; height: 9px; opacity: 0.45; transition: transform 0.2s; }
+    .nav-item:hover .nav-chevron { transform: rotate(180deg); }
+    .nav-dropdown {
+      position: absolute; top: calc(100% + 2px); left: 0;
+      background: var(--bg); border: 1px solid var(--border);
+      box-shadow: 0 10px 36px rgba(0,0,0,0.1);
+      min-width: 196px;
+      opacity: 0; pointer-events: none; transform: translateY(-6px);
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .nav-item:hover .nav-dropdown { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .nav-dropdown a {
+      display: block; padding: 10px 16px;
+      font-family: var(--mono); font-size: 0.58rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ink-2); text-decoration: none;
+      border-bottom: 1px solid var(--border-2);
+      transition: background 0.1s, color 0.1s; cursor: pointer;
+    }
+    .nav-dropdown a:last-child { border-bottom: none; }
+    .nav-dropdown a:hover { background: var(--teal-dim); color: var(--teal); }
+    .nav-dropdown .sub { padding-left: 28px; font-size: 0.54rem; color: var(--ink-3); background: var(--bg-2); }
+    .nav-dropdown .sub:hover { color: var(--teal); background: var(--teal-dim); }
+    .nav-engage {
+      font-family: var(--mono); font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--ink); border: 1px solid var(--border);
+      padding: 7px 18px; background: none; cursor: pointer;
+      transition: all 0.2s; font-family: var(--mono);
+    }
+    .nav-engage:hover { background: var(--bg-2); border-color: var(--ink); }
+
+    /* ══ SHARED ══ */
+    .rule { height: 1px; background: var(--rule); }
+    .eyebrow {
+      font-family: var(--mono); font-size: 0.58rem; font-weight: 500;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal);
+      margin-bottom: 1.25rem;
+    }
+    .btn { font-family: var(--mono); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 13px 28px; border: none; cursor: pointer; transition: all 0.18s; display: inline-block; text-decoration: none; }
+    .btn-ink  { background: var(--ink); color: var(--bg); }
+    .btn-ink:hover { background: var(--ink-2); }
+    .btn-teal { background: var(--teal); color: var(--bg); }
+    .btn-teal:hover { background: var(--teal-dk); }
+    .btn-ghost { background: transparent; color: var(--ink-2); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+    .btn-ghost-lt { background: transparent; color: rgba(242,237,228,0.6); border: 1px solid rgba(242,237,228,0.2); }
+    .btn-ghost-lt:hover { border-color: rgba(242,237,228,0.6); color: var(--bg); }
+
+    /* ══ PANELS ══ */
+    .panel { min-height: 100vh; display: flex; align-items: flex-end; padding: 0 6vw 8vh; position: relative; overflow: hidden; }
+
+    /* grid overlays */
+    .grid-dk {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(242,237,228,0.035) 1px,transparent 1px), linear-gradient(90deg,rgba(242,237,228,0.035) 1px,transparent 1px);
+      background-size: 80px 80px;
+    }
+    .grid-lt {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(28,31,36,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(28,31,36,0.04) 1px,transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    /* panel 1 — hero dark */
+    .panel-1 { background: var(--hero-bg); padding-top: 60px; }
+
+    /* panel 2 — platform split */
+    .panel-2 { background: var(--bg); align-items: center; }
+    .p2-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; position: relative; z-index: 1; width: 100%; }
+
+    /* panel 3 — network, bg-2 */
+    .panel-3 { background: var(--bg-2); }
+
+    /* panel 4 — position, bg-3 */
+    .panel-4 { background: var(--bg-3); }
+
+    .panel-content { position: relative; z-index: 1; width: 100%; }
+
+    .panel-eyebrow {
+      font-family: var(--mono); font-size: 0.58rem; font-weight: 500;
+      letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 1.75rem;
+    }
+    .panel-1 .panel-eyebrow { color: rgba(242,237,228,0.35); }
+    .panel-2 .panel-eyebrow, .panel-3 .panel-eyebrow, .panel-4 .panel-eyebrow { color: var(--teal); }
+
+    .panel-headline {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6.5vw, 7rem);
+      font-weight: 900; line-height: 1.0;
+      letter-spacing: -0.02em; margin-bottom: 1.75rem;
+    }
+    .panel-1 .panel-headline { color: var(--bg); }
+    .panel-2 .panel-headline, .panel-3 .panel-headline, .panel-4 .panel-headline { color: var(--ink); }
+    .panel-headline em { font-style: italic; }
+    .panel-1 .panel-headline em { color: var(--teal); }
+    .panel-2 .panel-headline em, .panel-3 .panel-headline em { color: var(--teal); }
+    .panel-4 .panel-headline em { color: var(--gold); }
+
+    .panel-sub {
+      font-size: 1rem; line-height: 1.8; font-weight: 300;
+      max-width: 500px; margin-bottom: 2.25rem;
+    }
+    .panel-1 .panel-sub { color: rgba(242,237,228,0.62); }
+    .panel-2 .panel-sub, .panel-3 .panel-sub, .panel-4 .panel-sub { color: var(--ink-2); }
+
+    .panel-actions { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+
+    /* panel 1 ticker */
+    .ticker {
+      margin-top: 4rem; padding-top: 1.5rem;
+      border-top: 1px solid rgba(242,237,228,0.1);
+      display: flex; gap: 2.5rem; flex-wrap: wrap;
+      font-family: var(--mono); font-size: 0.56rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(242,237,228,0.3);
+    }
+    .ticker span { color: rgba(26,122,153,0.7); }
+
+    /* scroll hint */
+    .scroll-hint {
+      position: absolute; bottom: 2.5rem; right: 6vw;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      opacity: 0.3; z-index: 1;
+    }
+    .scroll-hint span { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--bg); }
+    .scroll-line { width: 1px; height: 40px; background: var(--bg); animation: sp 2s ease-in-out infinite; }
+    @keyframes sp { 0%,100%{opacity:.3} 50%{opacity:1} }
+
+    /* ══ CREDIBILITY STRIP ══ */
+    .cred-strip {
+      background: var(--bg-2); border-bottom: 1px solid var(--border);
+      padding: 1.5rem 6vw;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+    .cred-label { font-family: var(--mono); font-size: 0.54rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; }
+    .cred-items { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
+    .cred-item { font-family: var(--mono); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; color: var(--ink-2); }
+    .cred-badge {
+      font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.1em;
+      color: var(--teal); border: 1px solid rgba(26,122,153,0.3);
+      padding: 4px 10px; white-space: nowrap;
+    }
+
+    /* ══ STATS STRIP ══ */
+    .stats-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .stat-block { padding: 2.75rem 2.5rem; border-right: 1px solid var(--border); }
+    .stat-block:first-child { padding-left: 6vw; }
+    .stat-block:last-child { border-right: none; padding-right: 6vw; }
+    .stat-big {
+      font-family: var(--serif); font-size: clamp(2.5rem, 4vw, 4.5rem);
+      font-weight: 900; line-height: 1; letter-spacing: -0.02em; color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .stat-big.teal { color: var(--teal); }
+    .stat-big.red  { color: var(--red); }
+    .stat-big.gold { color: var(--gold); }
+    .stat-lbl { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); line-height: 1.6; }
+    .stat-sub { font-size: 0.8rem; color: var(--ink-2); font-weight: 300; margin-top: 0.4rem; line-height: 1.6; }
+
+    /* ══ TERMINAL ══ */
+    .terminal { background: #0f1e14; border: 1px solid rgba(75,200,100,0.12); font-family: var(--mono); font-size: 0.7rem; }
+    .t-bar { display: flex; align-items: center; gap: 0.5rem; padding: 0.55rem 1rem; background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .t-dot.r{background:#ff5f57} .t-dot.y{background:#febc2e} .t-dot.g{background:#28c840}
+    .t-title { font-size: 0.56rem; color: rgba(255,255,255,0.28); letter-spacing: 0.1em; margin-left: 0.5rem; }
+    .t-body { padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.2rem; }
+    .tl { display: flex; gap: 0.5rem; }
+    .ts { height: 0.5rem; }
+    .tp { color: #28c840; flex-shrink: 0; }
+    .tc { color: rgba(255,255,255,0.82); }
+    .to { color: rgba(255,255,255,0.42); }
+    .to.i { color: #4bb8d4; }
+    .to.s { color: #28c840; }
+    .to.w { color: #febc2e; }
+    .to.d { color: #ff5f57; }
+    .t-cur { display:inline-block;width:7px;height:.85em;background:#28c840;vertical-align:text-bottom;animation:bl 1s step-end infinite; }
+    @keyframes bl { 0%,100%{opacity:1}50%{opacity:0} }
+
+    /* ══ INNER PAGES ══ */
+    .inner-page { display: none; padding-top: 60px; }
+    .inner-page.active { display: block; }
+
+    .pg-hero { padding: 5.5rem 6vw 3.5rem; border-bottom: 1px solid var(--rule); background: var(--bg); }
+    .pg-title { font-family: var(--serif); font-size: clamp(2rem,4vw,3.8rem); font-weight: 900; line-height: 1.02; letter-spacing: -0.02em; color: var(--ink); max-width: 760px; margin-bottom: 1.25rem; }
+    .pg-title em { font-style: italic; color: var(--teal); }
+    .pg-sub { font-size: 1rem; line-height: 1.8; font-weight: 300; color: var(--ink-2); max-width: 580px; }
+
+    .pg-body { padding: 4.5rem 6vw; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+
+    .sec-eyebrow { font-family: var(--mono); font-size: 0.56rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.85rem; }
+    .sec-title { font-family: var(--serif); font-size: 1.75rem; font-weight: 900; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; line-height: 1.1; }
+    .sec-title em { font-style: italic; color: var(--teal); }
+    .sec-body { font-size: 0.9rem; line-height: 1.8; font-weight: 300; color: var(--ink-2); margin-bottom: 1.25rem; }
+
+    .cap-list { border-top: 1px solid var(--border); margin-top: 1.5rem; }
+    .cap-item { display: flex; gap: 1.5rem; padding: 1.6rem 0; border-bottom: 1px solid var(--border); }
+    .cap-n { font-family: var(--mono); font-size: 0.56rem; font-weight: 600; letter-spacing: 0.1em; color: var(--teal); flex-shrink: 0; padding-top: 4px; }
+    .cap-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.35rem; }
+    .cap-body { font-size: 0.83rem; line-height: 1.7; color: var(--ink-2); font-weight: 300; }
+
+    .blist { list-style: none; border-top: 1px solid var(--border); margin-bottom: 1.5rem; }
+    .blist li { display: flex; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--border-2); font-size: 0.87rem; color: var(--ink-2); font-weight: 300; line-height: 1.5; }
+    .blist li::before { content: '→'; color: var(--teal); font-family: var(--mono); font-size: 0.68rem; flex-shrink: 0; padding-top: 2px; }
+
+    .callout { background: var(--teal-dim); border-left: 3px solid var(--teal); padding: 1.4rem 1.6rem; margin: 1.5rem 0; }
+    .callout p { font-size: 0.87rem; color: var(--ink-2); font-weight: 400; line-height: 1.7; }
+    .callout p strong { color: var(--ink); font-weight: 600; }
+
+    .testimony { border-left: 3px solid var(--teal); padding: 1.75rem 2rem; background: var(--bg-3); margin: 1.75rem 0; }
+    .tq { font-family: var(--serif); font-size: 1.1rem; font-style: italic; line-height: 1.65; color: var(--ink); margin-bottom: 0.85rem; }
+    .ta { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; color: var(--ink-3); }
+
+    .leader-card { background: var(--bg-2); border: 1px solid var(--border); padding: 2.5rem; }
+    .leader-name { font-family: var(--serif); font-size: 1.7rem; font-weight: 900; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 4px; }
+    .leader-title { font-family: var(--mono); font-size: 0.58rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.25rem; }
+    .leader-bio { font-size: 0.88rem; line-height: 1.75; color: var(--ink-2); font-weight: 300; }
+
+    .license-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+    .license-cell { background: var(--bg); padding: 1.6rem; }
+    .license-num { font-family: var(--serif); font-size: 2.4rem; font-weight: 900; color: var(--ink); }
+    .license-lbl { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-top: 0.35rem; line-height: 1.5; }
+
+    .patent-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 1.25rem; }
+    .patent-chip { font-family: var(--mono); font-size: 0.53rem; letter-spacing: 0.1em; color: var(--ink-3); border: 1px solid var(--border); padding: 4px 9px; }
+
+    .principles { border-top: 1px solid var(--border); margin-top: 1.75rem; }
+    .principle { display: flex; gap: 1.5rem; padding: 1.4rem 0; border-bottom: 1px solid var(--border); }
+    .p-num { font-family: var(--mono); font-size: 0.56rem; font-weight: 600; color: var(--teal); flex-shrink: 0; letter-spacing: 0.1em; padding-top: 2px; }
+    .p-text { font-size: 0.88rem; line-height: 1.65; color: var(--ink-2); font-weight: 300; }
+
+    /* contact form */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-family: var(--mono); font-size: 0.56rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 13px; border: 1px solid var(--border); font-size: 0.88rem; color: var(--ink); background: var(--bg); font-family: var(--sans); font-weight: 300; outline: none; transition: border-color 0.15s; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    /* media grid */
+    .media-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); margin-top: 2.5rem; }
+    .media-card { background: var(--bg-2); padding: 2rem; transition: background 0.15s; }
+    .media-card:hover { background: var(--bg-3); }
+    .mc-tag { font-family: var(--mono); font-size: 0.54rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+    .mc-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+    .mc-body { font-size: 0.82rem; line-height: 1.7; color: var(--ink-2); font-weight: 300; }
+
+    /* ══ FOOTER ══ */
+    footer { background: var(--bg-2); border-top: 1px solid var(--rule); padding: 4rem 6vw 2rem; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+    .f-brand { font-family: var(--mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); margin-bottom: 0.75rem; }
+    .f-brand span { color: var(--teal); }
+    .f-tagline { font-size: 0.82rem; line-height: 1.7; color: var(--ink-3); font-weight: 300; max-width: 260px; margin-bottom: 1.25rem; }
+    .f-addr { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.06em; color: var(--ink-3); line-height: 1.85; }
+    .f-col h4 { font-family: var(--mono); font-size: 0.56rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); margin-bottom: 1rem; }
+    .f-col a { display: block; font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; color: var(--ink-3); text-decoration: none; margin-bottom: 0.6rem; cursor: pointer; transition: color 0.15s; }
+    .f-col a:hover { color: var(--teal); }
+    .footer-certs { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .cert-badge { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.1em; color: var(--ink-3); border: 1px solid var(--border); padding: 4px 8px; }
+    .footer-bottom { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .panel { padding: 0 5vw 6vh; }
+      .p2-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .stats-strip { grid-template-columns: 1fr 1fr; }
+      .stat-block:first-child { padding-left: 5vw; }
+      .stat-block:last-child { padding-right: 5vw; }
+      .two-col { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .media-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .pg-hero { padding: 4rem 5vw 2.5rem; }
+      .pg-body { padding: 3rem 5vw; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" onclick="showPage('home')">i<span>REMEDY</span>.com</a>
+    <ul class="nav-links">
+      <li class="nav-item">
+        <button>Solutions <svg class="nav-chevron" viewBox="0 0 9 9" fill="none"><path d="M1 3l3.5 3.5L8 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown">
+          <a onclick="showPage('direct')">Direct</a>
+          <a onclick="showPage('technology')">Technology</a>
+          <a onclick="showPage('tradespy')" class="sub">↳ TradeSpy</a>
+          <a onclick="showPage('logistics')">Logistics</a>
+          <a onclick="showPage('incubator')">Incubator</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button>Services <svg class="nav-chevron" viewBox="0 0 9 9" fill="none"><path d="M1 3l3.5 3.5L8 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown">
+          <a onclick="showPage('manufacturers')">Manufacturers</a>
+          <a onclick="showPage('providers')">Providers</a>
+          <a onclick="showPage('pharmacies')">Pharmacies</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button>Company <svg class="nav-chevron" viewBox="0 0 9 9" fill="none"><path d="M1 3l3.5 3.5L8 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown">
+          <a onclick="showPage('mission')">Mission</a>
+          <a onclick="showPage('leadership')">Leadership</a>
+          <a onclick="showPage('contact')">Contact</a>
+          <a onclick="showPage('media')">Media</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button>Login <svg class="nav-chevron" viewBox="0 0 9 9" fill="none"><path d="M1 3l3.5 3.5L8 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown">
+          <a onclick="showPage('contact')">Supply Manager</a>
+          <a onclick="showPage('contact')">TradeSpy</a>
+        </div>
+      </li>
+      <li><button class="nav-engage" onclick="showPage('contact')">Engage</button></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ HOMEPAGE ══ -->
+<div id="home">
+
+  <!-- PANEL 1 — THE MISSION -->
+  <div class="panel panel-1">
+    <div class="grid-dk"></div>
+    <div class="panel-content">
+      <div class="panel-eyebrow">// 01 — The Mission</div>
+      <h1 class="panel-headline">The U.S. medical supply<br>chain is broken.<br><em>We're rebuilding it direct.</em></h1>
+      <p class="panel-sub">AI-native procurement. Manufacturer-direct distribution. Zero tolerance for middlemen.</p>
+      <div class="panel-actions">
+        <button class="btn btn-teal" onclick="showPage('direct')">See How →</button>
+        <button class="btn btn-ghost-lt" onclick="showPage('mission')">Our Mission</button>
+      </div>
+      <div class="ticker">
+        <div>50-State Licensed <span>·</span></div>
+        <div>10 U.S. Patents <span>·</span></div>
+        <div>NABP Accredited <span>·</span></div>
+        <div>DEA Licensed <span>·</span></div>
+        <div>Est. 2007 <span>·</span></div>
+        <div>DSCSA Compliant</div>
+      </div>
+    </div>
+    <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
+  </div>
+
+  <!-- CREDIBILITY STRIP -->
+  <div class="cred-strip">
+    <div class="cred-label">Trusted By &amp; Deployed With</div>
+    <div class="cred-items">
+      <div class="cred-item">UPS Healthcare</div>
+      <div class="cred-item">U.S. Senate</div>
+      <div class="cred-item">White House OMB</div>
+      <div class="cred-item">SAMS Coalition</div>
+      <div class="cred-badge">Operation Warp Speed · 500M+ Units Delivered</div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- PANEL 2 — THE PLATFORM (split) -->
+  <div class="panel panel-2">
+    <div class="grid-lt"></div>
+    <div class="p2-grid">
+      <div>
+        <div class="panel-eyebrow">// 02 — The Platform</div>
+        <h2 class="panel-headline">The operating system for <em>healthcare procurement.</em></h2>
+        <p class="panel-sub">MetaCommerceRx and TradeSpy give buyers real-time visibility into what drugs cost, where they come from, and who actually made them.</p>
+        <button class="btn btn-ink" onclick="showPage('technology')">Explore the Platform →</button>
+      </div>
+      <div>
+        <div class="terminal">
+          <div class="t-bar">
+            <div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div>
+            <div class="t-title">metacommercerx — procurement-os · tradespy — coo-intelligence</div>
+          </div>
+          <div class="t-body">
+            <div class="tl"><span class="tp">$</span>&nbsp;<span class="tc">platform status --all</span></div>
+            <div class="ts"></div>
+            <div class="tl"><span class="to i">● MetaCommerceRx &nbsp;&nbsp;&nbsp;&nbsp; ONLINE</span></div>
+            <div class="tl"><span class="to i">● TradeSpy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ONLINE</span></div>
+            <div class="tl"><span class="to i">● iRemedy Direct &nbsp;&nbsp;&nbsp;&nbsp; ACTIVE — 50 states</span></div>
+            <div class="tl"><span class="to i">● DSCSA Engine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMPLIANT</span></div>
+            <div class="ts"></div>
+            <div class="tl"><span class="tp">$</span>&nbsp;<span class="tc">tradespy scan --drug "semaglutide"</span></div>
+            <div class="tl"><span class="to">→ FDA Labeler: Novo Nordisk A/S (US)</span></div>
+            <div class="tl"><span class="to w">⚠ Actual API: Zhejiang Huahai, CN (68%)</span></div>
+            <div class="tl"><span class="to d">✗ COO conflict — foreign origin ≥80%</span></div>
+            <div class="ts"></div>
+            <div class="tl"><span class="tp">$</span>&nbsp;<span class="tc">run --batch national_formulary --n 2009</span></div>
+            <div class="tl"><span class="to s">✓ 1,847 resolved &nbsp;[6-agent autoloop]</span></div>
+            <div class="tl"><span class="to w">⚠ 412 flagged — CCP supply chain exposure</span></div>
+            <div class="tl"><span class="to d">✗ 89 critical — Hormuz disruption risk: HIGH</span></div>
+            <div class="ts"></div>
+            <div class="tl"><span class="tp">$</span>&nbsp;<span class="tc">_<span class="t-cur"></span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat-block">
+      <div class="stat-big teal">500M+</div>
+      <div class="stat-lbl">Units Delivered</div>
+      <div class="stat-sub">Under Operation Warp Speed federal contract.</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-big">1M+</div>
+      <div class="stat-lbl">Products Cataloged</div>
+      <div class="stat-sub">In the Universal Medical Products Catalog via MetaCommerceRx.</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-big red">&lt;10%</div>
+      <div class="stat-lbl">Domestic API Mfg.</div>
+      <div class="stat-sub">Of U.S. pharmaceutical ingredients are manufactured domestically.</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-big">50</div>
+      <div class="stat-lbl">States Licensed</div>
+      <div class="stat-sub">DEA, FDA, DSCSA, and NABP-accredited distribution in all 50 states.</div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- PANEL 3 — THE NETWORK -->
+  <div class="panel panel-3">
+    <div class="grid-lt"></div>
+    <div class="panel-content">
+      <div class="panel-eyebrow">// 03 — The Network</div>
+      <h2 class="panel-headline">Manufacturer-direct.<br>UPS Healthcare-backed.<br><em>50-state compliant.</em></h2>
+      <p class="panel-sub">National pharmaceutical distribution with white-label fulfillment, rapid manufacturer onboarding, and DEA/FDA/DSCSA compliance built into every shipment.</p>
+      <button class="btn btn-ink" onclick="showPage('logistics')">See the Network →</button>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- PANEL 4 — THE POSITION -->
+  <div class="panel panel-4">
+    <div class="grid-lt"></div>
+    <div class="panel-content">
+      <div class="panel-eyebrow">// 04 — The Position</div>
+      <h2 class="panel-headline">90% of U.S. drug APIs<br>come from China and India.<br><em>We're changing that.</em></h2>
+      <p class="panel-sub">Mapping the exposure. Naming the risk. Building the domestic infrastructure to replace it.</p>
+      <button class="btn btn-ink" onclick="showPage('mission')">Read the Mission →</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="f-brand">i<span>REMEDY</span> HEALTHCARE COMPANIES</div>
+        <p class="f-tagline">Technology-enabled healthcare supply chain — direct distribution, AI procurement intelligence, and country-of-origin transparency for a more resilient America.</p>
+        <div class="footer-certs">
+          <div class="cert-badge">DEA Licensed</div>
+          <div class="cert-badge">NABP Accredited</div>
+          <div class="cert-badge">DSCSA Compliant</div>
+          <div class="cert-badge">50-State Distribution</div>
+        </div>
+        <div class="f-addr">7118 South Kanner Highway · Stuart, FL 34997<br>sales@iremedy.com</div>
+      </div>
+      <div class="f-col">
+        <h4>Solutions</h4>
+        <a onclick="showPage('direct')">Direct</a>
+        <a onclick="showPage('technology')">Technology</a>
+        <a onclick="showPage('tradespy')">TradeSpy</a>
+        <a onclick="showPage('logistics')">Logistics</a>
+        <a onclick="showPage('incubator')">Incubator</a>
+      </div>
+      <div class="f-col">
+        <h4>Services</h4>
+        <a onclick="showPage('manufacturers')">Manufacturers</a>
+        <a onclick="showPage('providers')">Providers</a>
+        <a onclick="showPage('pharmacies')">Pharmacies</a>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <a onclick="showPage('mission')">Mission</a>
+        <a onclick="showPage('leadership')">Leadership</a>
+        <a onclick="showPage('contact')">Contact</a>
+        <a onclick="showPage('media')">Media</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 iRemedy Healthcare Companies, Inc. All rights reserved.</span>
+      <span>Terms · Privacy · DSCSA · Licenses</span>
+    </div>
+  </footer>
+
+</div><!-- /home -->
+
+<!-- ══ INNER PAGES ══ -->
+
+<!-- DIRECT -->
+<div id="page-direct" class="inner-page">
+  <div class="pg-hero">
+    <div class="eyebrow">// Solutions → Direct</div>
+    <h1 class="pg-title">No middlemen.<br><em>No markup games.</em></h1>
+    <p class="pg-sub">Buy pharmaceuticals direct from the manufacturer. Same product, transparent price, auditable chain of custody.</p>
+  </div>
+  <div class="pg-body">
+    <div class="two-col">
+      <div>
+        <div class="sec-eyebrow">iRemedy Direct</div>
+        <h2 class="sec-title">50-state distribution. <em>Built transparent.</em></h2>
+        <p class="sec-body">iRemedy Direct delivers pharmaceuticals, biologics, and medical supplies directly to providers, pharmacies, and government buyers — without the GPO markup, rebate complexity, or opacity that defines legacy distribution.</p>
+        <ul class="blist">
+          <li>Pharmaceuticals — branded, generic, specialty</li>
+          <li>Biologics and IVIG</li>
+          <li>Medical devices and med/surg supplies</li>
+          <li>Controlled substances (DEA-licensed)</li>
+        </ul>
+        <div class="callout"><p>Traditional distributors add <strong>3–7 layers</strong> between manufacturer and patient. Each layer adds cost, removes visibility, and creates a point of failure. iRemedy Direct compresses that to one.</p></div>
+        <button class="btn btn-ink" onclick="showPage('contact')">Talk to Our Team →</button>
+      </div>
+      <div>
+        <div class="sec-eyebrow">DaaS — Distributor-as-a-Service</div>
+        <h2 class="sec-title">You own the deal.<br><em>We handle the paperwork.</em></h2>
+        <p class="sec-body">Manufacturers without full U.S. distribution licensure use iRemedy as the regulatory pass-through. We hold the license. You own the customer relationship.</p>
+        <div class="cap-list">
+          <div class="cap-item"><div class="cap-n">01</div><div><div class="cap-title">Seller-of-Record Structure</div><div class="cap-body">Full regulatory pass-through. You maintain the customer; iRemedy provides the compliance envelope.</div></div></div>
+          <div class="cap-item"><div class="cap-n">02</div><div><div class="cap-title">License Verification</div><div class="cap-body">Automated DEA/FDA/state board verification on every downstream order.</div></div></div>
+          <div class="cap-item"><div class="cap-n">03</div><div><div class="cap-title">50-State Coverage</div><div class="cap-body">Operate nationally from day one without building your own license stack.</div></div></div>
+        </div>
+        <button class="btn btn-ghost" onclick="showPage('contact')">Learn About DaaS →</button>
+      </div>
+    </div>
+  </div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- TECHNOLOGY -->
+<div id="page-technology" class="inner-page">
+  <div class="pg-hero">
+    <div class="eyebrow">// Solutions → Technology</div>
+    <h1 class="pg-title">The operating system for<br><em>healthcare procurement.</em></h1>
+    <p class="pg-sub">MetaCommerceRx runs the orders. TradeSpy runs the intelligence. Both are live, both are production.</p>
+  </div>
+  <div class="pg-body">
+    <div class="two-col">
+      <div>
+        <div class="sec-eyebrow">MetaCommerceRx</div>
+        <h2 class="sec-title">Patented AI. <em>Every transaction.</em></h2>
+        <p class="sec-body">Built on patented AI automation, MetaCommerceRx handles SKU normalization, DEA/FDA license verification, DSCSA serialization, real-time inventory, and multi-tier ordering — as a managed service.</p>
+        <ul class="blist">
+          <li>Multi-platform ordering with built-in license verification</li>
+          <li>Customer-branded portals</li>
+          <li>QuickBooks, CRM, ERP, EMR/EHR integrations</li>
+          <li>DSCSA compliance engine</li>
+          <li>Real-time dashboards: inventory, geography, demand</li>
+        </ul>
+        <div class="callout"><p>Standard integration: <strong>$5,000/month</strong> (12-month term) · MVP go-live: <strong>2–4 weeks</strong></p></div>
+        <button class="btn btn-ink" onclick="showPage('contact')">Request a Demo →</button>
+      </div>
+      <div>
+        <div class="sec-eyebrow">TradeSpy</div>
+        <h2 class="sec-title">The label says who <em>markets</em> it.<br>TradeSpy says who <em>makes</em> it.</h2>
+        <p class="sec-body">Real-time exposure mapping for every NDC in your formulary. Country of origin. Manufacturer risk. Shortage probability. Domestic alternatives.</p>
+        <ul class="blist">
+          <li>2,009-drug national formulary intelligence</li>
+          <li>FDA FEI/DECRS manufacturer site mapping</li>
+          <li>Customs bill-of-lading cross-reference</li>
+          <li>COO risk scoring and conflict detection</li>
+          <li>CCP supply chain exposure flagging</li>
+        </ul>
+        <button class="btn btn-ghost" onclick="showPage('tradespy')">Explore TradeSpy →</button>
+        <div style="margin-top:2.25rem">
+          <div class="sec-eyebrow">10 Granted U.S. Patents</div>
+          <div class="patent-chips">
+            <div class="patent-chip">US 12,468,774</div><div class="patent-chip">US 11,983,236</div>
+            <div class="patent-chip">US 12,332,966</div><div class="patent-chip">US 11,860,967</div>
+            <div class="patent-chip">US 11,640,440</div><div class="patent-chip">US 11,416,575</div>
+            <div class="patent-chip">US 11,568,019</div><div class="patent-chip">US 11,580,190</div>
+            <div class="patent-chip">US 12,259,940</div><div class="patent-chip">US 12,326,913</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- TRADESPY -->
+<div id="page-tradespy" class="inner-page">
+  <div class="pg-hero">
+    <div class="eyebrow">// Solutions → Technology → TradeSpy</div>
+    <h1 class="pg-title">Know your supply chain<br><em>before it fails you.</em></h1>
+    <p class="pg-sub">Real-time exposure mapping for every NDC in your formulary. Country of origin. Manufacturer risk. Shortage probability. Domestic alternatives.</p>
+  </div>
+  <div class="pg-body">
+    <div class="two-col">
+      <div>
+        <div class="sec-eyebrow">The Gap</div>
+        <h2 class="sec-title">FDA labels identify who <em>markets</em> a drug. Not who manufactures it.</h2>
+        <p class="sec-body">The FDA labeler record is the U.S. marketing entity. The actual API manufacturing site may be in China, India, or elsewhere entirely. TradeSpy closes that gap with searchable, auditable intelligence built on real manufacturing data.</p>
+        <div class="callout"><p><strong>90%</strong> of active pharmaceutical ingredients used in U.S. drugs come from foreign manufacturers. TradeSpy maps exactly which ones — and where the risk concentrates.</p></div>
+        <button class="btn btn-ink" onclick="showPage('contact')">Request Access →</button>
+      </div>
+      <div>
+        <div class="sec-eyebrow">Built For</div>
+        <h2 class="sec-title">Intelligence that <em>moves decisions.</em></h2>
+        <ul class="blist">
+          <li>Hospital and IDN procurement teams</li>
+          <li>Government and federal buyers (VA, DLA, DoD)</li>
+          <li>Compliance and regulatory affairs teams</li>
+          <li>GPO and formulary managers</li>
+        </ul>
+        <div class="sec-eyebrow" style="margin-top:2rem;">Data Sources</div>
+        <ul class="blist">
+          <li>openFDA API</li>
+          <li>DailyMed SPL XML</li>
+          <li>PharmaCompass</li>
+          <li>FDA FEI / DECRS manufacturing site records</li>
+          <li>Customs bill-of-lading data</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- LOGISTICS -->
+<div id="page-logistics" class="inner-page">
+  <div class="pg-hero">
+    <div class="eyebrow">// Solutions → Logistics</div>
+    <h1 class="pg-title">The logistics layer<br><em>healthcare actually needs.</em></h1>
+    <p class="pg-sub">UPS Healthcare infrastructure, iRemedy compliance, white-label fulfillment. Cold chain, DEA, DSCSA — handled.</p>
+  </div>
+  <div class="pg-body">
+    <div class="two-col">
+      <div>
+        <div class="sec-eyebrow">The Network</div>
+        <h2 class="sec-title">UPS Healthcare backbone.<br><em>iRemedy compliance layer.</em></h2>
+        <p class="sec-body">1–2 day reach to 95% of the U.S. population. cGMP/GDP-compliant facilities, cold chain infrastructure, and controlled substance vault capability across the network.</p>
+        <div class="license-grid" style="margin-top:1.5rem;">
+          <div class="license-cell"><div class="license-num">18M+</div><div class="license-lbl">Sq ft cGMP/GDP warehouse space</div></div>
+          <div class="license-cell"><div class="license-num">95%</div><div class="license-lbl">U.S. population reach in 1–2 days</div></div>
+          <div class="license-cell"><div class="license-num">200+</div><div class="license-lbl">Countries served globally</div></div>
+          <div class="license-cell"><div class="license-num">GDP</div><div class="license-lbl">Compliant cold chain &amp; CS vaults</div></div>
+        </div>
+        <button class="btn btn-ink" style="margin-top:1.75rem;" onclick="showPage('contact')">Talk to Our Team →</button>
+      </div>
+      <div>
+        <div class="sec-eyebrow">White-Label Fulfillment</div>
+        <h2 class="sec-title">Your brand. <em>Our infrastructure.</em></h2>
+        <p class="sec-body">iRemedy provides white-label fulfillment for manufacturers and distributors who need logistics capability without building it in-house. Your brand on the box, our compliance behind it.</p>
+        <ul class="blist">
+          <li>Custom packaging and labeling</li>
+          <li>Branded customer portal via MetaCommerceRx</li>
+          <li>DSCSA serialization — every order</li>
+          <li>DEA license coverage included</li>
+        </ul>
+        <button class="btn btn-ghost" onclick="showPage('incubator')">See the Incubator →</button>
+      </div>
+    </div>
+  </div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- INCUBATOR -->
+<div id="page-incubator" class="inner-page">
+  <div class="pg-hero">
+    <div class="eyebrow">// Solutions → Incubator</div>
+    <h1 class="pg-title">The fastest path to the<br><em>U.S. healthcare market.</em></h1>
+    <p class="pg-sub">For emerging medical product companies, iRemedy provides licensing, technology, logistics, and distribution as a managed service. Bring the product. We handle the rest.</p>
+  </div>
+  <div class="pg-body">
+    <div class="two-col">
+      <div>
+        <div class="sec-eyebrow">What's Included</div>
+        <h2 class="sec-title">The full stack. <em>No build required.</em></h2>
+        <p class="sec-body">The Incubator compresses U.S. market entry from 12–18 months to weeks. We provide everything a manufacturer needs to sell compliantly into the U.S. healthcare market — warehousing, fulfillment, licensing, technology, and distribution — as a single managed service.</p>
+        <div class="cap-list">
+          <div class="cap-item"><div class="cap-n">01</div><div><div class="cap-title">Warehousing &amp; Fulfillment</div><div class="cap-body">GDP-compliant storage via UPS Healthcare. Cold chain, ambient, and controlled substance capable.</div></div></div>
+          <div class="cap-item"><div class="cap-n">02</div><div><div class="cap-title">Licensing &amp; Compliance</div><div class="cap-body">DEA, FDA, DSCSA, and state licensure — managed and maintained by iRemedy.</div></div></div>
+          <div class="cap-item"><div class="cap-n">03</div><div><div class="cap-title">Order Management</div><div class="cap-body">MetaCommerceRx integration — from order capture to last-mile fulfillment.</div></div></div>
+          <div class="cap-item"><div class="cap-n">04</div><div><div class="cap-title">DTP/DTPv Distribution</div><div class="cap-body">Direct-to-provider and direct-to-patient distribution across all 50 states.</div></div></div>
+        </div>
+        <div class="callout"><p>Pricing: <strong>$5K–$15K/month</strong> · Onboarding: weeks, not months</p></div>
+        <button class="btn btn-ink" onclick="showPage('contact')">Talk to Our Team →</button>
+      </div>
+      <div>
+        <div class="sec-eyebrow">Built For</div>
+        <h2 class="sec-title">Manufacturers who want to <em>move fast.</em></h2>
+        <p class="sec-body">The Incubator is purpose-built for manufacturers entering U.S. healthcare distribution — domestic startups, international companies seeking U.S. market access, and established players launching new product lines.</p>
+        <ul class="blist">
+          <li>Domestic manufacturers entering distribution</li>
+          <li>International companies entering the U.S. market</li>
+          <li>Established manufacturers launching new product lines</li>
+          <li>Companies needing a compliant white-label fulfillment partner</li>
+        </ul>
+        <div class="callout">
+          <p>The Incubator is not a consulting engagement. It's infrastructure — operational from week one, built to scale with your volume.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- MANUFACTURERS -->
+<div id="page-manufacturers" class="inner-page">
+  <div class="pg-hero"><div class="eyebrow">// Services → Manufacturers</div><h1 class="pg-title">Your product.<br><em>Our infrastructure.</em></h1><p class="pg-sub">Licensing, distribution, compliance, technology, and market access — as a managed service.</p></div>
+  <div class="pg-body"><div class="two-col"><div><p class="sec-body">iRemedy's Incubator and DaaS programs are built for manufacturers who want to move fast without building a distribution operation from scratch.</p><ul class="blist"><li>Incubator Program — full-stack U.S. market entry</li><li>DaaS — license pass-through, you keep the customer</li><li>MetaCommerceRx integration for order management</li><li>Regulatory advisory and compliance architecture</li><li>Go-to-market and pricing strategy</li></ul><button class="btn btn-ink" onclick="showPage('contact')">Talk to Our Team →</button></div><div><div class="callout"><p>Whether you're launching a new product in the U.S. or need a licensed distribution pass-through, iRemedy compresses the timeline from months to weeks — without compromising compliance.</p></div></div></div></div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- PROVIDERS -->
+<div id="page-providers" class="inner-page">
+  <div class="pg-hero"><div class="eyebrow">// Services → Providers</div><h1 class="pg-title">Direct access.<br>Transparent pricing.<br><em>No GPO required.</em></h1><p class="pg-sub">Hospitals, clinics, and health systems deserve to know what they're paying and why.</p></div>
+  <div class="pg-body"><div class="two-col"><div><p class="sec-body">iRemedy Direct gives providers a straightforward path to pharmaceutical and supply procurement — no rebate games, no opaque markups, no middlemen with misaligned incentives.</p><p class="sec-body">50-state distribution. Pricing you can see. Compliance built into every order.</p><button class="btn btn-ink" onclick="showPage('contact')">Get Started →</button></div><div><div class="callout"><p>Traditional GPO arrangements create incentive structures that don't always align with the buyer's best interest. iRemedy Direct removes the layer — you buy direct, you see the price, you know what you're getting.</p></div></div></div></div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- PHARMACIES -->
+<div id="page-pharmacies" class="inner-page">
+  <div class="pg-hero"><div class="eyebrow">// Services → Pharmacies</div><h1 class="pg-title">Distribution built for<br><em>independent pharmacy.</em></h1><p class="pg-sub">50-state wholesale distribution with transparent pricing and DEA compliance built in.</p></div>
+  <div class="pg-body"><div class="two-col"><div><p class="sec-body">iRemedy Direct serves 503A compounding pharmacies, mail-order pharmacies, and independent retail pharmacies with the same infrastructure large health systems use — at a scale that works for your business.</p><ul class="blist"><li>50-state pharmaceutical wholesale distribution</li><li>DEA-licensed controlled substance distribution</li><li>NABP-accredited operations</li><li>Transparent, straightforward pricing</li><li>MetaCommerceRx order management</li></ul><button class="btn btn-ink" onclick="showPage('contact')">Contact Us →</button></div><div><div class="callout"><p>Independent pharmacies are underserved by the legacy distributor oligopoly. iRemedy is built for distributors that want transparency, not a three-year locked contract.</p></div></div></div></div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- MISSION -->
+<div id="page-mission" class="inner-page">
+  <div class="pg-hero">
+    <div class="eyebrow">// Company → Mission</div>
+    <h1 class="pg-title">Restore transparency, resiliency, and economic rationality to the<br><em>healthcare supply chain.</em></h1>
+  </div>
+  <div class="pg-body">
+    <div class="two-col">
+      <div>
+        <p class="sec-body">iRemedy was founded on a provable observation: the U.S. healthcare supply chain is structurally broken. Middlemen multiply. Prices are hidden. 90% of drug APIs come from foreign manufacturers — with a significant share representing a live national security risk.</p>
+        <p class="sec-body">We exist to fix that. Not through lobbying alone. Through infrastructure — direct distribution, AI-powered procurement intelligence, country-of-origin transparency, and compliance-native technology deployed at scale.</p>
+        <div class="sec-eyebrow" style="margin-top:2.25rem;">Made in America</div>
+        <p class="sec-body">The U.S. cannot sustain a healthcare system whose inputs are manufactured by adversaries. TradeSpy maps the exposure. The Incubator accelerates domestic manufacturers. iRemedy Direct creates the distribution channel. This is the infrastructure layer domestic reshoring requires.</p>
+        <div class="sec-eyebrow" style="margin-top:2.25rem;">Principles</div>
+        <div class="principles">
+          <div class="principle"><div class="p-num">01</div><div class="p-text">Direct distribution where possible — fewer layers, lower cost, more accountability.</div></div>
+          <div class="principle"><div class="p-num">02</div><div class="p-text">Technology as infrastructure, not software overhead — built to solve real operational problems.</div></div>
+          <div class="principle"><div class="p-num">03</div><div class="p-text">Compliance-native from day one — built in, not bolted on.</div></div>
+          <div class="principle"><div class="p-num">04</div><div class="p-text">Transparent economics — pricing should be visible; services must be profitable to be sustainable.</div></div>
+          <div class="principle"><div class="p-num">05</div><div class="p-text">Healthcare supply chains are critical national security infrastructure — not just commercial systems.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="testimony">
+          <div class="tq">"The United States cannot continue to depend on adversarial nations for the medications Americans need to survive. This is not a supply chain challenge. It is a national security emergency."</div>
+          <div class="ta">— Tony Paquin, CEO · U.S. Senate Special Committee on Aging</div>
+        </div>
+        <div class="leader-card" style="margin-top:1.5rem;">
+          <div class="leader-name">Tony Paquin</div>
+          <div class="leader-title">CEO &amp; Co-Founder · iRemedy Healthcare Companies</div>
+          <p class="leader-bio">Testified before the U.S. Senate Special Committee on Aging. Briefed the White House Made in America Office. Author of <em>The End of Us</em> (2023). Led Operation Warp Speed federal contract — 1 billion needles and syringes delivered. Founding member, SAMS Coalition. Co-inventor, 10 U.S. patents.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- LEADERSHIP -->
+<div id="page-leadership" class="inner-page">
+  <div class="pg-hero"><div class="eyebrow">// Company → Leadership</div><h1 class="pg-title">The Team.</h1><p class="pg-sub">Operators, inventors, and supply chain architects who've spent decades inside the system they're rebuilding.</p></div>
+  <div class="pg-body">
+    <div class="leader-card" style="max-width:640px;">
+      <div class="leader-name">Tony Paquin</div>
+      <div class="leader-title">CEO &amp; Co-Founder</div>
+      <p class="leader-bio">30+ years in healthcare technology and supply chain. Co-inventor on 10 granted U.S. patents. Led the federal contract delivering 1 billion needles and syringes during Operation Warp Speed. Testified before the U.S. Senate Special Committee on Aging. Briefed the White House Made in America Office. Author of <em>The Retail Healthcare Revolution</em> (2007) and <em>The End of Us</em> (2023).</p>
+    </div>
+  </div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- CONTACT -->
+<div id="page-contact" class="inner-page">
+  <div class="pg-hero"><div class="eyebrow">// Company → Contact</div><h1 class="pg-title">Engage.</h1><p class="pg-sub">Buyer, manufacturer, government, or media — tell us who you are and what you're working on.</p></div>
+  <div class="pg-body">
+    <div class="two-col">
+      <div>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Tony" /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Paquin" /></div>
+        </div>
+        <div class="form-group"><label>Work Email</label><input type="email" placeholder="you@company.com" /></div>
+        <div class="form-group"><label>Organization</label><input type="text" placeholder="Company name" /></div>
+        <div class="form-group">
+          <label>I am a</label>
+          <select>
+            <option value="">Select...</option>
+            <option>Buyer — Hospital / Health System / Pharmacy</option>
+            <option>Manufacturer — Entering U.S. Distribution</option>
+            <option>Government — Federal / State Procurement</option>
+            <option>Investor / M&amp;A</option>
+            <option>Media / Press</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell us what you're working on..."></textarea></div>
+        <button class="btn btn-ink" type="submit">Send →</button>
+      </div>
+      <div>
+        <div class="sec-eyebrow">Direct</div>
+        <h3 class="sec-title" style="font-size:1.35rem;">iRemedy Healthcare<br>Companies, Inc.</h3>
+        <p class="sec-body">7118 South Kanner Highway<br>Stuart, FL 34997</p>
+        <p class="sec-body">sales@iremedy.com</p>
+        <div class="callout" style="margin-top:2rem;"><p>Inquiries are routed by type — buyer, manufacturer, government, and media contacts go to separate teams. Use the form for fastest routing.</p></div>
+      </div>
+    </div>
+  </div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- MEDIA -->
+<div id="page-media" class="inner-page">
+  <div class="pg-hero"><div class="eyebrow">// Company → Media</div><h1 class="pg-title">iRemedy in the record.</h1><p class="pg-sub">Senate testimony, federal contracts, policy leadership, and the book that started the conversation.</p></div>
+  <div class="pg-body">
+    <div class="media-grid">
+      <div class="media-card"><div class="mc-tag">Book · 2023</div><div class="mc-title">The End of Us</div><div class="mc-body">Tony Paquin's documented account of America's pharmaceutical dependency on foreign supply chains — and what it will take to reverse it. Available on Amazon.</div></div>
+      <div class="media-card"><div class="mc-tag">Senate · Testimony</div><div class="mc-title">Special Committee on Aging</div><div class="mc-body">Tony Paquin testified before the U.S. Senate Special Committee on Aging on pharmaceutical supply chain vulnerabilities and domestic reshoring.</div></div>
+      <div class="media-card"><div class="mc-tag">White House</div><div class="mc-title">Made in America Office</div><div class="mc-body">iRemedy briefed the White House Made in America Office on pharmaceutical API dependency and the intelligence infrastructure needed to address it.</div></div>
+      <div class="media-card"><div class="mc-tag">Federal Contract</div><div class="mc-title">Operation Warp Speed</div><div class="mc-body">iRemedy delivered 1 billion needles and syringes under a federal contract during COVID-19 — one of the largest healthcare supply mobilizations in U.S. history.</div></div>
+      <div class="media-card"><div class="mc-tag">Coalition · Founding Member</div><div class="mc-title">SAMS Coalition</div><div class="mc-body">iRemedy is a founding member of the SAMS Coalition — a policy reform network focused on domestic supply chain resilience for American healthcare.</div></div>
+      <div class="media-card"><div class="mc-tag">Press</div><div class="mc-title">Press Inquiries</div><div class="mc-body">For media requests, interview availability, or press kit access, use the contact form and select Media.</div></div>
+    </div>
+  </div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
+</div>
+
+<!-- ══ JS ══ -->
+<script>
+  function showPage(id) {
+    document.getElementById('home').style.display = 'none';
+    document.querySelectorAll('.inner-page').forEach(p => p.classList.remove('active'));
+    if (id === 'home') {
+      document.getElementById('home').style.display = 'block';
+    } else {
+      const el = document.getElementById('page-' + id);
+      if (el) el.classList.add('active');
+      else document.getElementById('home').style.display = 'block';
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
