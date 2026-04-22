@@ -105,14 +105,14 @@
     .btn-ghost-lt:hover { border-color: rgba(242,237,228,0.6); color: var(--bg); }
 
     /* ══ PANELS ══ */
-    .panel { min-height: auto; display: flex; align-items: stretch; padding: 0; position: relative; overflow: hidden; }
-    .panel-inner { width: 100%; display: grid; grid-template-columns: 55fr 45fr; align-items: stretch; max-width: 1440px; margin: 0 auto; }
-    .panel-text { padding: 5rem 5rem 5rem 8vw; position: relative; z-index: 1; max-width: 680px; }
-    .panel-img { position: relative; overflow: hidden; min-height: 500px; }
+    .panel { min-height: auto; display: block; position: relative; overflow: hidden; }
+    .panel-inner { display: grid; grid-template-columns: 58% 42%; align-items: stretch; width: 100%; }
+    .panel-text { padding: 5rem 4rem 5rem 6vw; position: relative; z-index: 1; }
+    .panel-img { position: relative; overflow: hidden; min-height: 480px; }
     .panel-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .panel-img-overlay { position: absolute; inset: 0; }
-    .panel-1 .panel-inner { grid-template-columns: 55fr 45fr; max-width: 100%; }
-    .panel-1 .panel-text { padding: 120px 5rem 5rem 8vw; max-width: 660px; }
+    .panel-1 .panel-inner { grid-template-columns: 58% 42%; }
+    .panel-1 .panel-text { padding: 120px 4rem 5rem 6vw; }
 
     /* grid overlays */
     .grid-dk {
@@ -331,10 +331,9 @@
     /* ══ RESPONSIVE ══ */
     @media (max-width: 900px) {
       .nav-links { display: none; }
-      .panel-inner { grid-template-columns: 1fr !important; max-width: 100% !important; }
-      .panel-img { min-height: 280px; order: 0 !important; }
-      .panel-text { padding: 3.5rem 5vw !important; max-width: 100% !important; }
-      .panel { padding: 0; }
+      .panel-inner { grid-template-columns: 1fr !important; }
+      .panel-img { min-height: 260px; order: -1; }
+      .panel-text { padding: 3rem 5vw !important; }
       .p2-grid { grid-template-columns: 1fr; gap: 3rem; }
       .stats-strip { grid-template-columns: 1fr 1fr; }
       .stat-block:first-child { padding-left: 5vw; }
