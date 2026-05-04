@@ -341,6 +341,26 @@
       .pg-hero { padding: 4rem 5vw 2.5rem; }
       .pg-body { padding: 3rem 5vw; }
     }
+  /* ══ LEADERSHIP PAGE ══ */
+  .ldp-section { padding: 4rem 6vw; border-bottom: 1px solid var(--rule); }
+  .ldp-section:last-of-type { border-bottom: none; }
+  .ldp-section-header { margin-bottom: 3rem; }
+  .ldp-section-tag { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+  .ldp-section-title { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 700; color: var(--ink); }
+  .ldp-section-sub { font-size: 0.9rem; color: var(--ink-3); margin-top: 0.4rem; font-family: var(--sans); }
+  .ldp-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .ldp-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 860px; }
+  .ldp-grid-6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .ldp-card { background: var(--bg-2); border: 1px solid var(--rule); padding: 2rem; }
+  .ldp-card.placeholder { opacity: 0.6; }
+  .ldp-avatar { width: 100%; aspect-ratio: 1; background: var(--bg-3); border: 1px solid var(--rule); margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+  .ldp-avatar svg { width: 100%; height: 100%; }
+  .ldp-avatar-initials { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--ink-3); }
+  .ldp-avatar-note { position: absolute; bottom: 0.5rem; left: 0; right: 0; text-align: center; font-family: var(--mono); font-size: 0.42rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); opacity: 0.7; }
+  .ldp-name { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; }
+  .ldp-title { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.9rem; }
+  .ldp-bio { font-size: 0.85rem; line-height: 1.7; color: var(--ink-2); }
+  .ldp-dark { background: var(--bg-3); }
   /* ══ TRADESPY PAGE ══ */
   .ts-page { background: var(--bg); color: var(--ink); }
   .ts-hero { background: var(--bg); padding: 7rem 6vw 4rem; border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
@@ -1181,14 +1201,213 @@
 
 <!-- LEADERSHIP -->
 <div id="page-leadership" class="inner-page">
-  <div class="pg-hero"><div class="eyebrow">// Company → Leadership</div><h1 class="pg-title">The Team.</h1><p class="pg-sub">Operators, inventors, and supply chain architects who've spent decades inside the system they're rebuilding.</p></div>
-  <div class="pg-body">
-    <div class="leader-card" style="max-width:640px;">
-      <div class="leader-name">Tony Paquin</div>
-      <div class="leader-title">CEO &amp; Co-Founder</div>
-      <p class="leader-bio">30+ years in healthcare technology and supply chain. Co-inventor on 10 granted U.S. patents. Led the federal contract delivering 1 billion needles and syringes during Operation Warp Speed. Testified before the U.S. Senate Special Committee on Aging. Briefed the White House Made in America Office. Author of <em>The Retail Healthcare Revolution</em> (2007) and <em>The End of Us</em> (2023).</p>
+  <div class="pg-hero">
+    <div class="eyebrow">// Company → Leadership</div>
+    <h1 class="pg-title">The People<br>Behind the <em>Platform.</em></h1>
+    <p class="pg-sub">Operators, inventors, and supply chain architects who have spent decades inside the system they are rebuilding.</p>
+  </div>
+
+  <!-- SECTION 1: LEADERSHIP TEAM -->
+  <div class="ldp-section">
+    <div class="ldp-section-header">
+      <div class="ldp-section-tag">// 01 — Leadership Team</div>
+      <h2 class="ldp-section-title">Executive Leadership</h2>
+      <p class="ldp-section-sub">The operators who built iRemedy and run it every day.</p>
+    </div>
+    <div class="ldp-grid-3">
+
+      <!-- Tony Paquin -->
+      <div class="ldp-card">
+        <div class="ldp-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#e6e0d5"/>
+            <circle cx="100" cy="78" r="36" fill="#c8bfb0"/>
+            <ellipse cx="100" cy="175" rx="58" ry="42" fill="#c8bfb0"/>
+            <text x="100" y="195" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b7280" letter-spacing="1" opacity="0.8">PHOTO PENDING</text>
+          </svg>
+        </div>
+        <div class="ldp-name">Tony Paquin</div>
+        <div class="ldp-title">CEO &amp; Co-Founder</div>
+        <p class="ldp-bio">30+ years in healthcare technology and supply chain. Co-inventor on 10 granted U.S. patents. Led the federal contract delivering over 1 billion units during Operation Warp Speed. Testified before the U.S. Senate Special Committee on Aging. Briefed the White House Made in America Office. Author of <em>The End of Us</em> (2023).</p>
+      </div>
+
+      <!-- Anthony Paquin -->
+      <div class="ldp-card">
+        <div class="ldp-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#e6e0d5"/>
+            <circle cx="100" cy="78" r="36" fill="#c8bfb0"/>
+            <ellipse cx="100" cy="175" rx="58" ry="42" fill="#c8bfb0"/>
+            <text x="100" y="195" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b7280" letter-spacing="1" opacity="0.8">PHOTO PENDING</text>
+          </svg>
+        </div>
+        <div class="ldp-name">Anthony Paquin</div>
+        <div class="ldp-title">Chief Intelligence Officer &amp; Strategic Architect</div>
+        <p class="ldp-bio">Joined iRemedy in 2013 and has led the company’s AI strategy, commercial architecture, and policy positioning. Co-inventor on multiple granted U.S. patents covering AI-driven supply chain automation. Named co-architect of iRemedy’s intelligence platform and procurement infrastructure. M.B.A., University of North Carolina at Chapel Hill.</p>
+      </div>
+
+      <!-- Amanda Somsy -->
+      <div class="ldp-card">
+        <div class="ldp-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#e6e0d5"/>
+            <circle cx="100" cy="78" r="36" fill="#c8bfb0"/>
+            <ellipse cx="100" cy="175" rx="58" ry="42" fill="#c8bfb0"/>
+            <text x="100" y="195" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b7280" letter-spacing="1" opacity="0.8">PHOTO PENDING</text>
+          </svg>
+        </div>
+        <div class="ldp-name">Amanda Somsy</div>
+        <div class="ldp-title">Chief Financial Officer</div>
+        <p class="ldp-bio">Oversees iRemedy’s financial operations, reporting, and capital strategy. Leads financial diligence for M&amp;A processes and manages the accounting and compliance functions across all business lines.</p>
+      </div>
+
     </div>
   </div>
+
+  <!-- SECTION 2: BOARD OF DIRECTORS -->
+  <div class="ldp-section ldp-dark">
+    <div class="ldp-section-header">
+      <div class="ldp-section-tag">// 02 — Board of Directors</div>
+      <h2 class="ldp-section-title">Board of Directors</h2>
+      <p class="ldp-section-sub">Independent directors providing governance, strategic oversight, and industry expertise.</p>
+    </div>
+    <div class="ldp-grid-6">
+
+      <!-- Board Member 1 -->
+      <div class="ldp-card placeholder">
+        <div class="ldp-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#e6e0d5"/>
+            <circle cx="100" cy="78" r="36" fill="#c8bfb0"/>
+            <ellipse cx="100" cy="175" rx="58" ry="42" fill="#c8bfb0"/>
+            <text x="100" y="195" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b7280" letter-spacing="1" opacity="0.8">PHOTO PENDING</text>
+          </svg>
+        </div>
+        <div class="ldp-name">[Board Member Name]</div>
+        <div class="ldp-title">[Title / Organization]</div>
+        <p class="ldp-bio">[Short bio — 2 to 3 sentences covering background, expertise, and relevance to iRemedy.]</p>
+      </div>
+
+      <!-- Board Member 2 -->
+      <div class="ldp-card placeholder">
+        <div class="ldp-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#e6e0d5"/>
+            <circle cx="100" cy="78" r="36" fill="#c8bfb0"/>
+            <ellipse cx="100" cy="175" rx="58" ry="42" fill="#c8bfb0"/>
+            <text x="100" y="195" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b7280" letter-spacing="1" opacity="0.8">PHOTO PENDING</text>
+          </svg>
+        </div>
+        <div class="ldp-name">[Board Member Name]</div>
+        <div class="ldp-title">[Title / Organization]</div>
+        <p class="ldp-bio">[Short bio — 2 to 3 sentences covering background, expertise, and relevance to iRemedy.]</p>
+      </div>
+
+      <!-- Board Member 3 -->
+      <div class="ldp-card placeholder">
+        <div class="ldp-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#e6e0d5"/>
+            <circle cx="100" cy="78" r="36" fill="#c8bfb0"/>
+            <ellipse cx="100" cy="175" rx="58" ry="42" fill="#c8bfb0"/>
+            <text x="100" y="195" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b7280" letter-spacing="1" opacity="0.8">PHOTO PENDING</text>
+          </svg>
+        </div>
+        <div class="ldp-name">[Board Member Name]</div>
+        <div class="ldp-title">[Title / Organization]</div>
+        <p class="ldp-bio">[Short bio — 2 to 3 sentences covering background, expertise, and relevance to iRemedy.]</p>
+      </div>
+
+      <!-- Board Member 4 -->
+      <div class="ldp-card placeholder">
+        <div class="ldp-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#e6e0d5"/>
+            <circle cx="100" cy="78" r="36" fill="#c8bfb0"/>
+            <ellipse cx="100" cy="175" rx="58" ry="42" fill="#c8bfb0"/>
+            <text x="100" y="195" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b7280" letter-spacing="1" opacity="0.8">PHOTO PENDING</text>
+          </svg>
+        </div>
+        <div class="ldp-name">[Board Member Name]</div>
+        <div class="ldp-title">[Title / Organization]</div>
+        <p class="ldp-bio">[Short bio — 2 to 3 sentences covering background, expertise, and relevance to iRemedy.]</p>
+      </div>
+
+      <!-- Board Member 5 -->
+      <div class="ldp-card placeholder">
+        <div class="ldp-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#e6e0d5"/>
+            <circle cx="100" cy="78" r="36" fill="#c8bfb0"/>
+            <ellipse cx="100" cy="175" rx="58" ry="42" fill="#c8bfb0"/>
+            <text x="100" y="195" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b7280" letter-spacing="1" opacity="0.8">PHOTO PENDING</text>
+          </svg>
+        </div>
+        <div class="ldp-name">[Board Member Name]</div>
+        <div class="ldp-title">[Title / Organization]</div>
+        <p class="ldp-bio">[Short bio — 2 to 3 sentences covering background, expertise, and relevance to iRemedy.]</p>
+      </div>
+
+      <!-- Board Member 6 -->
+      <div class="ldp-card placeholder">
+        <div class="ldp-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#e6e0d5"/>
+            <circle cx="100" cy="78" r="36" fill="#c8bfb0"/>
+            <ellipse cx="100" cy="175" rx="58" ry="42" fill="#c8bfb0"/>
+            <text x="100" y="195" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b7280" letter-spacing="1" opacity="0.8">PHOTO PENDING</text>
+          </svg>
+        </div>
+        <div class="ldp-name">[Board Member Name]</div>
+        <div class="ldp-title">[Title / Organization]</div>
+        <p class="ldp-bio">[Short bio — 2 to 3 sentences covering background, expertise, and relevance to iRemedy.]</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 3: SPECIAL ADVISORS -->
+  <div class="ldp-section">
+    <div class="ldp-section-header">
+      <div class="ldp-section-tag">// 03 — Special Advisors</div>
+      <h2 class="ldp-section-title">Special Advisors to the CEO</h2>
+      <p class="ldp-section-sub">Senior advisors providing strategic counsel across key initiatives.</p>
+    </div>
+    <div class="ldp-grid-2">
+
+      <!-- Murray Firestone -->
+      <div class="ldp-card">
+        <div class="ldp-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#e6e0d5"/>
+            <circle cx="100" cy="78" r="36" fill="#c8bfb0"/>
+            <ellipse cx="100" cy="175" rx="58" ry="42" fill="#c8bfb0"/>
+            <text x="100" y="195" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b7280" letter-spacing="1" opacity="0.8">PHOTO PENDING</text>
+          </svg>
+        </div>
+        <div class="ldp-name">Murray Firestone</div>
+        <div class="ldp-title">Senior Strategic Advisor</div>
+        <p class="ldp-bio">Cross-organizational strategic advisor to iRemedy’s CEO with deep involvement in the company’s IVIG distribution strategy, partnership development, and commercial expansion. Brings senior-level experience in healthcare business development and organizational growth.</p>
+      </div>
+
+      <!-- Willem Griffioen -->
+      <div class="ldp-card">
+        <div class="ldp-avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#e6e0d5"/>
+            <circle cx="100" cy="78" r="36" fill="#c8bfb0"/>
+            <ellipse cx="100" cy="175" rx="58" ry="42" fill="#c8bfb0"/>
+            <text x="100" y="195" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#6b7280" letter-spacing="1" opacity="0.8">PHOTO PENDING</text>
+          </svg>
+        </div>
+        <div class="ldp-name">Willem Griffioen</div>
+        <div class="ldp-title">Strategic Advisor</div>
+        <p class="ldp-bio">Advisor and strategic connector supporting iRemedy’s market development and partnership initiatives. Brings an extensive network across healthcare, government, and commercial sectors relevant to iRemedy’s growth strategy.</p>
+      </div>
+
+    </div>
+  </div>
+
   <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
 </div>
 
