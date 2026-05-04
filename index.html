@@ -125,6 +125,9 @@
     /* panel 2 — platform split */
     .panel-2 { background: var(--bg); align-items: center; }
     .p2-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; position: relative; z-index: 1; width: 100%; }
+    .panel-3 { background: var(--bg-2); align-items: center; }
+    .p3-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; position: relative; z-index: 1; width: 100%; }
+    .dist-svg { width: 100%; max-width: 440px; display: block; margin: 0 auto; }
 
     /* panel 3 — network, bg-2 */
     .panel-3 { background: var(--bg-2); }
@@ -553,7 +556,75 @@
 
   <div class="rule"></div>
 
+  <!-- PANEL 3 — SMART DISTRIBUTION -->
+  <div class="panel panel-3">
+    <div class="grid-lt"></div>
+    <div class="p3-grid">
+      <div>
+        <!-- Animated hub-and-spoke distribution network SVG -->
+        <svg class="dist-svg" viewBox="0 0 420 350" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <path id="dn1" d="M210,168 L210,72"/>
+            <path id="dn2" d="M248,155 L315,112"/>
+            <path id="dn3" d="M248,195 L315,238"/>
+            <path id="dn4" d="M210,182 L210,278"/>
+            <path id="dn5" d="M172,195 L105,238"/>
+            <path id="dn6" d="M172,155 L105,112"/>
+          </defs>
+          <!-- Spoke lines with flowing dash animation -->
+          <line x1="210" y1="168" x2="210" y2="72" stroke="#1a7a99" stroke-width="1.2" stroke-dasharray="5 3" opacity="0.35"><animate attributeName="stroke-dashoffset" from="0" to="-8" dur="0.9s" repeatCount="indefinite"/></line>
+          <line x1="248" y1="155" x2="315" y2="112" stroke="#1a7a99" stroke-width="1.2" stroke-dasharray="5 3" opacity="0.35"><animate attributeName="stroke-dashoffset" from="0" to="-8" dur="1.1s" repeatCount="indefinite"/></line>
+          <line x1="248" y1="195" x2="315" y2="238" stroke="#1a7a99" stroke-width="1.2" stroke-dasharray="5 3" opacity="0.35"><animate attributeName="stroke-dashoffset" from="0" to="-8" dur="1.0s" repeatCount="indefinite"/></line>
+          <line x1="210" y1="182" x2="210" y2="278" stroke="#1a7a99" stroke-width="1.2" stroke-dasharray="5 3" opacity="0.35"><animate attributeName="stroke-dashoffset" from="0" to="-8" dur="0.85s" repeatCount="indefinite"/></line>
+          <line x1="172" y1="195" x2="105" y2="238" stroke="#1a7a99" stroke-width="1.2" stroke-dasharray="5 3" opacity="0.35"><animate attributeName="stroke-dashoffset" from="0" to="-8" dur="1.05s" repeatCount="indefinite"/></line>
+          <line x1="172" y1="155" x2="105" y2="112" stroke="#1a7a99" stroke-width="1.2" stroke-dasharray="5 3" opacity="0.35"><animate attributeName="stroke-dashoffset" from="0" to="-8" dur="0.95s" repeatCount="indefinite"/></line>
+          <!-- Animated data pulses -->
+          <circle r="4" fill="#1a7a99" opacity="0"><animateMotion dur="1.1s" repeatCount="indefinite" begin="0s"><mpath href="#dn1"/></animateMotion><animate attributeName="opacity" values="0;0.9;0" dur="1.1s" repeatCount="indefinite" begin="0s"/></circle>
+          <circle r="4" fill="#1a7a99" opacity="0"><animateMotion dur="1.1s" repeatCount="indefinite" begin="0.35s"><mpath href="#dn2"/></animateMotion><animate attributeName="opacity" values="0;0.9;0" dur="1.1s" repeatCount="indefinite" begin="0.35s"/></circle>
+          <circle r="4" fill="#1a7a99" opacity="0"><animateMotion dur="1.1s" repeatCount="indefinite" begin="0.55s"><mpath href="#dn3"/></animateMotion><animate attributeName="opacity" values="0;0.9;0" dur="1.1s" repeatCount="indefinite" begin="0.55s"/></circle>
+          <circle r="4" fill="#1a7a99" opacity="0"><animateMotion dur="1.1s" repeatCount="indefinite" begin="0.7s"><mpath href="#dn4"/></animateMotion><animate attributeName="opacity" values="0;0.9;0" dur="1.1s" repeatCount="indefinite" begin="0.7s"/></circle>
+          <circle r="4" fill="#1a7a99" opacity="0"><animateMotion dur="1.1s" repeatCount="indefinite" begin="0.85s"><mpath href="#dn5"/></animateMotion><animate attributeName="opacity" values="0;0.9;0" dur="1.1s" repeatCount="indefinite" begin="0.85s"/></circle>
+          <circle r="4" fill="#1a7a99" opacity="0"><animateMotion dur="1.1s" repeatCount="indefinite" begin="1.0s"><mpath href="#dn6"/></animateMotion><animate attributeName="opacity" values="0;0.9;0" dur="1.1s" repeatCount="indefinite" begin="1.0s"/></circle>
+          <!-- CENTER NODE: iRemedy Direct -->
+          <rect x="148" y="158" width="124" height="34" rx="3" fill="rgba(26,122,153,0.12)" stroke="#1a7a99" stroke-width="1.75"/>
+          <text x="210" y="178" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10" fill="#1a7a99" letter-spacing="2" font-weight="600">iREMEDY DIRECT</text>
+          <!-- ENDPOINT: Hospitals (top) -->
+          <rect x="163" y="39" width="94" height="33" rx="3" fill="var(--bg)" stroke="rgba(28,31,36,0.18)" stroke-width="1"/>
+          <text x="210" y="60" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8" fill="#3a3f47" letter-spacing="1.5">HOSPITALS</text>
+          <!-- ENDPOINT: 503A (top-right) -->
+          <rect x="272" y="96" width="94" height="33" rx="3" fill="var(--bg)" stroke="rgba(28,31,36,0.18)" stroke-width="1"/>
+          <text x="319" y="110" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" fill="#3a3f47" letter-spacing="1">503A</text>
+          <text x="319" y="122" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" fill="#3a3f47" letter-spacing="1">PHARMACY</text>
+          <!-- ENDPOINT: 503B (bottom-right) -->
+          <rect x="272" y="222" width="94" height="33" rx="3" fill="var(--bg)" stroke="rgba(28,31,36,0.18)" stroke-width="1"/>
+          <text x="319" y="236" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" fill="#3a3f47" letter-spacing="1">503B</text>
+          <text x="319" y="248" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" fill="#3a3f47" letter-spacing="1">PHARMACY</text>
+          <!-- ENDPOINT: Govt Agencies (bottom) -->
+          <rect x="163" y="279" width="94" height="33" rx="3" fill="var(--bg)" stroke="rgba(28,31,36,0.18)" stroke-width="1"/>
+          <text x="210" y="293" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" fill="#3a3f47" letter-spacing="1">GOVT</text>
+          <text x="210" y="305" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" fill="#3a3f47" letter-spacing="1">AGENCIES</text>
+          <!-- ENDPOINT: Providers & Clinics (bottom-left) -->
+          <rect x="54" y="222" width="100" height="33" rx="3" fill="var(--bg)" stroke="rgba(28,31,36,0.18)" stroke-width="1"/>
+          <text x="104" y="236" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" fill="#3a3f47" letter-spacing="1">PROVIDERS</text>
+          <text x="104" y="248" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" fill="#3a3f47" letter-spacing="1">&amp; CLINICS</text>
+          <!-- ENDPOINT: Independent Pharmacy (top-left) -->
+          <rect x="54" y="96" width="100" height="33" rx="3" fill="var(--bg)" stroke="rgba(28,31,36,0.18)" stroke-width="1"/>
+          <text x="104" y="110" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" fill="#3a3f47" letter-spacing="1">INDEPENDENT</text>
+          <text x="104" y="122" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="7.5" fill="#3a3f47" letter-spacing="1">PHARMACY</text>
+        </svg>
+      </div>
+      <div>
+        <div class="panel-eyebrow">// 03 — Smart Distribution</div>
+        <h2 class="panel-headline">Smart Distribution<br>for <em>Smart People.</em></h2>
+        <p class="panel-sub">iRemedy Direct delivers pharmaceutical and medical products from manufacturers directly to the facilities that need them — hospitals, 503A and 503B compounding pharmacies, independent pharmacies, clinical providers, and government agencies — without the markup layers that inflate cost and obscure accountability.</p>
+        <p class="panel-sub">Every order carries transparent pricing, auditable chain of custody, and DSCSA serialization built in. Where Made in America alternatives exist and meet clinical requirements, we source them — because domestic supply is not just a preference, it’s a national security imperative.</p>
+        <p class="panel-sub">Fifty states licensed. DEA authorized. UPS Healthcare-backed logistics. The infrastructure is already built.</p>
+        <button class="btn btn-ink" onclick="showPage('direct')">See iRemedy Direct →</button>
+      </div>
+    </div>
+  </div>
 
+  <div class="rule"></div>
 
   <!-- FOOTER -->
   <footer>
