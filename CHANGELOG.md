@@ -11,12 +11,41 @@ Use these `CHG-XXX` numbers to reference specific states when picking up work ac
 
 ## Active State
 
-**Current:** CHG-014 — Homepage redesign (routing cards, 6-section structure, FAQ)
+**Current:** CHG-016 — Logo replacement (nav + footer)
 **Date:** 2026-05-05
 
 ---
 
 ## Change History
+
+### CHG-016 — Nav and footer logo replacement
+**Date:** 2026-05-05
+**Commit:** `56c589a`
+- Replaced text "iREMEDY.com" in nav with `iRemedy_Logo_wo_Slogan.png` (36px tall, links to home)
+- Replaced text "iREMEDY HEALTHCARE COMPANIES" in footer with same logo (28px tall)
+- Both logo files added to `assets/`: `iRemedy_Logo_wo_Slogan.png`, `iRemedy_Logo_White_Text.png`
+
+---
+
+### CHG-015 — Global type scale polish pass
+**Date:** 2026-05-05
+**Commit:** `cf960ab`
+- Panel headline reduced: `clamp(3rem,6.5vw,7rem)` → `clamp(2.5rem,5vw,4.5rem)`
+- Body text enforced at 1rem minimum: `.sec-body`, `.cap-body`, `.blist li`, `.callout p`, `.p-text`
+- Footer: links → 0.875rem, address → 0.8rem, col headers → 0.8rem, tagline → 0.875rem
+- Stats: label → 0.75rem, sub → 0.875rem
+- Buttons: 0.65rem → 0.875rem
+- Cert badges: 0.52rem → 0.8rem, padding increased
+- Eyebrow / panel-eyebrow labels: 0.58rem → 0.8rem
+- Hero: max-width 90vw constraint, headline margin-bottom 2.5rem, credential strip → 0.8rem
+- Routing cards: body text → 1rem, CTA links → 0.8rem
+- Card 3: link updated to Government page, CTA → "See Government Solutions →"
+- FAQ: expanded to full content width (removed max-width:820px)
+- FAQ questions: 1.05rem → 1.125rem (all 7); answers: 0.9rem → 1rem (all 7)
+- Trusted By credential line: 0.56rem → 0.8rem
+- Footer: Supply Side Podcast link added below address
+
+---
 
 ### CHG-014 — Homepage full redesign
 **Date:** 2026-05-05
