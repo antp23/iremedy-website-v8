@@ -82,11 +82,11 @@
     .nav-engage {
       font-family: var(--mono); font-size: 0.6rem; font-weight: 600;
       letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--ink); border: 1px solid var(--border);
-      padding: 7px 18px; background: none; cursor: pointer;
-      transition: all 0.2s; font-family: var(--mono);
+      color: #fff; background: var(--teal); border: 1px solid var(--teal);
+      padding: 7px 18px; cursor: pointer;
+      transition: all 0.2s;
     }
-    .nav-engage:hover { background: var(--bg-2); border-color: var(--ink); }
+    .nav-engage:hover { background: var(--teal-dk); border-color: var(--teal-dk); }
 
     /* ══ SHARED ══ */
     .rule { height: 1px; background: var(--rule); }
@@ -450,19 +450,11 @@
   <div class="nav-inner">
     <a class="nav-logo" onclick="showPage('home')">i<span>REMEDY</span>.com</a>
     <ul class="nav-links">
-      <li class="nav-item">
-        <button>Solutions <svg class="nav-chevron" viewBox="0 0 9 9" fill="none"><path d="M1 3l3.5 3.5L8 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <div class="nav-dropdown">
-          <a onclick="showPage('direct')">Direct</a>
-          <a onclick="showPage('technology')">Technology</a>
-          <a onclick="showPage('tradespy')" class="sub">↳ TradeSpy</a>
-          <a onclick="showPage('logistics')">Logistics</a>
-          <a onclick="showPage('incubator')">Incubator</a>
-        </div>
-      </li>
       <li class="nav-item"><button onclick="showPage('manufacturers')">Manufacturers</button></li>
       <li class="nav-item"><button onclick="showPage('providers')">Providers</button></li>
       <li class="nav-item"><button onclick="showPage('pharmacies')">Pharmacies</button></li>
+      <li class="nav-item"><button onclick="showPage('platform')">Platform</button></li>
+      <li class="nav-item"><button onclick="showPage('tradespy')">TradeSpy</button></li>
       <li class="nav-item">
         <button>Company <svg class="nav-chevron" viewBox="0 0 9 9" fill="none"><path d="M1 3l3.5 3.5L8 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="nav-dropdown">
@@ -479,7 +471,7 @@
           <a onclick="showPage('contact')">TradeSpy</a>
         </div>
       </li>
-      <li><button class="nav-engage" onclick="showPage('contact')">Engage</button></li>
+      <li><button class="nav-engage" onclick="showPage('contact')">Get Started</button></li>
     </ul>
   </div>
 </nav>
@@ -495,7 +487,8 @@
       <h1 class="panel-headline">AI Distribution.<br><em>Smarter supply. Better care.</em></h1>
       <p class="panel-sub">503A · 503B · Made in America · National Security · In-Office Dispensing · DSCSA · Domestic Reshoring · CCP Exposure · Manufacturer-Direct · DEA Compliant · Supply Chain Resilience · Country-of-Origin Transparency</p>
       <div class="panel-actions">
-        <button class="btn btn-teal" onclick="showPage('direct')">See How →</button>
+        <!-- TODO: relink after content migration -->
+        <button class="btn btn-teal" onclick="showPage('providers')">See How →</button>
         <button class="btn btn-ghost-lt" onclick="showPage('mission')">Our Mission</button>
       </div>
       <div class="ticker">
@@ -586,7 +579,7 @@
         <p class="panel-sub">iRemedy Direct delivers pharmaceutical and medical products from manufacturers directly to the facilities that need them — hospitals, 503A and 503B compounding pharmacies, independent pharmacies, clinical providers, and government agencies — without the markup layers that inflate cost and obscure accountability.</p>
         <p class="panel-sub">Every order carries transparent pricing, auditable chain of custody, and DSCSA serialization built in. Where Made in America alternatives exist and meet clinical requirements, we source them — because domestic supply is not just a preference, it’s a national security imperative.</p>
         <p class="panel-sub">Fifty states licensed. DEA authorized. UPS Healthcare-backed logistics. The infrastructure is already built.</p>
-        <button class="btn btn-ink" onclick="showPage('direct')">See iRemedy Direct →</button>
+        <button class="btn btn-ink" onclick="showPage('providers')">Learn More →</button>
       </div>
     </div>
   </div>
@@ -601,7 +594,7 @@
         <div class="panel-eyebrow">// 03 — The Platform</div>
         <h2 class="panel-headline">The operating system for the <em>medical supply chain.</em></h2>
         <p class="panel-sub">MetaCommerceRx is iRemedy's AI-powered procurement platform — normalizing product catalogs, matching SKUs across suppliers, and surfacing true cost and availability in real time. TradeSpy goes deeper: it maps the actual country of origin for drug APIs against FDA labeler records, exposing foreign dependency and CCP supply chain risk that traditional procurement tools never see. Together, they give buyers the intelligence to make decisions the old system was designed to obscure.</p>
-        <button class="btn btn-ink" onclick="showPage('technology')">Explore the Platform →</button>
+        <button class="btn btn-ink" onclick="showPage('platform')">Explore the Platform →</button>
       </div>
       <div>
         <div class="terminal">
@@ -675,15 +668,12 @@
         <div class="f-addr">7118 South Kanner Highway · Stuart, FL 34997<br>sales@iremedy.com</div>
       </div>
       <div class="f-col">
-        <h4>Solutions</h4>
-        <a onclick="showPage('direct')">Direct</a>
-        <a onclick="showPage('technology')">Technology</a>
+        <h4>Platform</h4>
+        <a onclick="showPage('platform')">MetaCommerceRx</a>
         <a onclick="showPage('tradespy')">TradeSpy</a>
-        <a onclick="showPage('logistics')">Logistics</a>
-        <a onclick="showPage('incubator')">Incubator</a>
       </div>
       <div class="f-col">
-        <h4>Services</h4>
+        <h4>Markets</h4>
         <a onclick="showPage('manufacturers')">Manufacturers</a>
         <a onclick="showPage('providers')">Providers</a>
         <a onclick="showPage('pharmacies')">Pharmacies</a>
@@ -706,8 +696,40 @@
 
 <!-- ══ INNER PAGES ══ -->
 
-<!-- DIRECT -->
-<div id="page-direct" class="inner-page">
+<!-- PLATFORM -->
+<div id="page-platform" class="inner-page">
+  <div class="pg-hero">
+    <div class="eyebrow">// Platform</div>
+    <h1 class="pg-title">The operating system for<br><em>healthcare procurement.</em></h1>
+    <p class="pg-sub">MetaCommerceRx powers the orders. The patent portfolio protects the innovation. Coming soon.</p>
+  </div>
+  <div class="pg-body">
+    <div class="two-col">
+      <div>
+        <div class="sec-eyebrow">MetaCommerceRx</div>
+        <h2 class="sec-title">AI procurement.<br><em>Built for healthcare.</em></h2>
+        <p class="sec-body">MetaCommerceRx is iRemedy's patented AI procurement platform — normalizing product catalogs, matching SKUs across suppliers, and surfacing true cost and availability in real time. Full content coming soon.</p>
+        <button class="btn btn-ink" onclick="showPage('contact')">Request a Demo →</button>
+      </div>
+      <div>
+        <div class="sec-eyebrow">Patent Portfolio</div>
+        <h2 class="sec-title">10 granted U.S. patents.<br><em>The innovation is protected.</em></h2>
+        <p class="sec-body">iRemedy holds 10 granted U.S. patents covering AI-powered procurement, supply chain normalization, and country-of-origin intelligence. Full portfolio page coming soon.</p>
+        <div class="patent-chips" style="margin-top:1rem;">
+          <div class="patent-chip">US 12,468,774</div><div class="patent-chip">US 11,983,236</div>
+          <div class="patent-chip">US 12,332,966</div><div class="patent-chip">US 11,860,967</div>
+          <div class="patent-chip">US 11,640,440</div><div class="patent-chip">US 11,416,575</div>
+          <div class="patent-chip">US 11,568,019</div><div class="patent-chip">US 11,580,190</div>
+          <div class="patent-chip">US 12,259,940</div><div class="patent-chip">US 12,326,913</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Back to Home</a></div></footer>
+</div>
+
+<!-- LEGACY: solutions/direct — archived 2026-05-05, preserved for reference. Incubator content may be re-linked from Manufacturers page. -->
+<div id="page-legacy-direct" class="inner-page">
   <div class="pg-hero">
     <div class="eyebrow">// Solutions → Direct</div>
     <h1 class="pg-title">No middlemen.<br><em>No markup games.</em></h1>
@@ -745,7 +767,8 @@
 </div>
 
 <!-- TECHNOLOGY -->
-<div id="page-technology" class="inner-page">
+<!-- LEGACY: solutions/technology — archived 2026-05-05, preserved for reference -->
+<div id="page-legacy-technology" class="inner-page">
   <div class="pg-hero">
     <div class="eyebrow">// Solutions → Technology</div>
     <h1 class="pg-title">The operating system for<br><em>healthcare procurement.</em></h1>
@@ -1075,7 +1098,8 @@
 </div>
 
 <!-- LOGISTICS -->
-<div id="page-logistics" class="inner-page">
+<!-- LEGACY: solutions/logistics — archived 2026-05-05, preserved for reference -->
+<div id="page-legacy-logistics" class="inner-page">
   <div class="pg-hero">
     <div class="eyebrow">// Solutions → Logistics</div>
     <h1 class="pg-title">The logistics layer<br><em>healthcare actually needs.</em></h1>
@@ -1105,7 +1129,8 @@
           <li>DSCSA serialization — every order</li>
           <li>DEA license coverage included</li>
         </ul>
-        <button class="btn btn-ghost" onclick="showPage('incubator')">See the Incubator →</button>
+        <!-- TODO: relink after content migration — was linking to solutions/incubator -->
+        <button class="btn btn-ghost" onclick="showPage('contact')">Talk to Our Team →</button>
       </div>
     </div>
   </div>
@@ -1113,7 +1138,8 @@
 </div>
 
 <!-- INCUBATOR -->
-<div id="page-incubator" class="inner-page">
+<!-- LEGACY: solutions/incubator — archived 2026-05-05, KEEP ACCESSIBLE — may be re-linked from Manufacturers page -->
+<div id="page-legacy-incubator" class="inner-page">
   <div class="pg-hero">
     <div class="eyebrow">// Solutions → Incubator</div>
     <h1 class="pg-title">The fastest path to the<br><em>U.S. healthcare market.</em></h1>
