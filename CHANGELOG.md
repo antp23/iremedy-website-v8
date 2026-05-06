@@ -11,12 +11,21 @@ Use these `CHG-XXX` numbers to reference specific states when picking up work ac
 
 ## Active State
 
-**Current:** CHG-020 — Pharmacies page full redesign
+**Current:** CHG-021 — Fraud detection supplement (partial)
 **Date:** 2026-05-05
 
 ---
 
 ## Change History
+
+### CHG-021 — Fraud detection supplement (partial)
+**Date:** 2026-05-05
+**Commit:** `c8f8b88`
+- TradeSpy page: New `// Fraud Detection` section inserted between OMB M-25-22 and Built By Operators — headline, 3-paragraph body copy, 3-card grid (Counterfeit & Origin / Quality & Documentation / Pricing & Intermediary)
+- Homepage FAQ: Added 8th question "How does iRemedy help detect supply chain fraud?" — previous last item got border-bottom added
+- DEFERRED (needs government page redesign prompt first): Govt hero subheadline update, new Section 02B (6-card fraud section), Section 03 TradeSpy fraud framing paragraph, Section 04 Made in America fraud prevention paragraph
+
+---
 
 ### CHG-020 — Pharmacies page full redesign
 **Date:** 2026-05-05
