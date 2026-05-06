@@ -1777,8 +1777,247 @@
 
 <!-- PHARMACIES -->
 <div id="page-pharmacies" class="inner-page">
-  <div class="pg-hero"><div class="eyebrow">// Services → Pharmacies</div><h1 class="pg-title">Distribution built for<br><em>independent pharmacy.</em></h1><p class="pg-sub">50-state wholesale distribution with transparent pricing and DEA compliance built in.</p></div>
-  <div class="pg-body"><div class="two-col"><div><p class="sec-body">iRemedy Direct serves 503A compounding pharmacies, mail-order pharmacies, and independent retail pharmacies with the same infrastructure large health systems use - at a scale that works for your business.</p><ul class="blist"><li>50-state pharmaceutical wholesale distribution</li><li>DEA-licensed controlled substance distribution</li><li>NABP-accredited operations</li><li>Transparent, straightforward pricing</li><li>MetaCommerceRx order management</li></ul><button class="btn btn-ink" onclick="showPage('contact')">Contact Us →</button></div><div><div class="callout"><p>Independent pharmacies are underserved by the legacy distributor oligopoly. iRemedy is built for distributors that want transparency, not a three-year locked contract.</p></div></div></div></div>
+
+  <!-- SECTION 01 — HERO -->
+  <div style="background:var(--hero-bg);padding:6rem 6vw 4.5rem;position:relative;overflow:hidden;">
+    <div class="grid-dk"></div>
+    <div style="position:relative;z-index:1;">
+      <div style="font-family:var(--mono);font-size:0.8rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:rgba(242,237,228,0.35);margin-bottom:1.75rem;">// Pharmacies</div>
+      <h1 style="font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:1.0;letter-spacing:-0.02em;color:var(--bg);max-width:900px;margin-bottom:1.25rem;">Wholesale distribution and API supply built for compounding and <em style="font-style:italic;color:var(--teal);">independent pharmacy.</em></h1>
+      <p style="font-family:var(--serif);font-size:1.15rem;font-style:italic;color:rgba(242,237,228,0.62);max-width:720px;margin-bottom:2rem;line-height:1.7;font-weight:300;">Pharmaceuticals, bulk APIs, peptides, GLP-1 agonists, biologics, controlled substances, and supplies — with full chain-of-custody documentation and pharma-grade cold chain.</p>
+      <p style="font-family:var(--mono);font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(242,237,228,0.4);margin-bottom:2.5rem;">50-State Licensed · DEA Authorized · NABP Accredited · DSCSA Compliant · FDA Green List API Sources · UPS Healthcare Cold Chain</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <button class="btn btn-teal" onclick="showPage('contact')">Request Pricing →</button>
+        <button class="btn btn-ghost-lt" onclick="document.getElementById('pharm-catalog').scrollIntoView({behavior:'smooth'})">See Our API Catalog ↓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 02 — THE SOURCING PROBLEM -->
+  <div style="background:var(--bg);padding:5rem 6vw;border-bottom:1px solid var(--rule);">
+    <div class="eyebrow">// 02 — The Sourcing Problem</div>
+    <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);max-width:820px;margin-bottom:2.5rem;">Your API supply chain is only as good as the documentation behind it.</h2>
+    <div class="two-col">
+      <div>
+        <p class="sec-body">Compounding pharmacies face an impossible combination: unprecedented demand for peptide and GLP-1 therapies, tightening FDA enforcement, and a wholesale market flooded with APIs of unverifiable origin. Import holds, cGMP violations, and untraceable chains of custody have disrupted pharmacies across the country — and the cost of sourcing from the wrong supplier isn't a fine, it's your license.</p>
+        <p class="sec-body">Independent retail pharmacies face a different version of the same problem: locked into distributor contracts with opaque pricing, volume minimums that don't fit their scale, and no visibility into where products actually come from.</p>
+      </div>
+      <div>
+        <div class="callout"><p>iRemedy solves both problems with the same infrastructure: a fully credentialed distribution platform where every product — from bulk API to finished pharmaceutical — carries documented origin, auditable chain of custody, and pharma-grade logistics from warehouse to your receiving dock.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 03 — PRODUCT CATEGORIES -->
+  <div id="pharm-catalog" style="background:var(--bg-2);padding:5rem 6vw;border-bottom:1px solid var(--rule);">
+    <div class="eyebrow">// 03 — Product Categories</div>
+    <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:3rem;">From GLP-1 APIs to finished pharmaceuticals. One credentialed source.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:2rem;">
+      <!-- GLP-1 card — HIGH DEMAND accent -->
+      <div style="background:var(--bg);padding:2rem;border-top:3px solid var(--teal);position:relative;">
+        <div style="position:absolute;top:1.25rem;right:1.25rem;font-family:var(--mono);font-size:0.52rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background:var(--teal);color:#fff;padding:3px 8px;">HIGH DEMAND</div>
+        <div style="font-family:var(--mono);font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem;">GLP-1 &amp; Metabolic APIs</div>
+        <div style="font-size:1rem;color:var(--ink);font-weight:500;margin-bottom:0.75rem;line-height:1.5;">Tirzepatide · Semaglutide · Retatrutide (pipeline)</div>
+        <div style="font-size:0.9rem;color:var(--ink-2);font-weight:300;line-height:1.6;">FDA Green List sourced. For Rx compounding under 503A/503B. Lyophilized powder. Full CoA and lot documentation on every shipment.</div>
+      </div>
+      <!-- Peptides card -->
+      <div style="background:var(--bg);padding:2rem;">
+        <div style="font-family:var(--mono);font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem;">Peptides &amp; Wellness APIs</div>
+        <div style="font-size:1rem;color:var(--ink);font-weight:500;margin-bottom:0.75rem;line-height:1.5;">Sermorelin · Gonadorelin · BPC-157 · Ipamorelin · Thymosin Alpha-1 · NAD+</div>
+        <div style="font-size:0.9rem;color:var(--ink-2);font-weight:300;line-height:1.6;">503A bulk-eligible peptides for compounding. Lyophilized powder. Subcutaneous administration. Growing demand across longevity, wellness, and regenerative medicine.</div>
+      </div>
+      <!-- BHRT card -->
+      <div style="background:var(--bg);padding:2rem;">
+        <div style="font-family:var(--mono);font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem;">BHRT &amp; Hormone APIs</div>
+        <div style="font-size:1rem;color:var(--ink);font-weight:500;margin-bottom:0.75rem;line-height:1.5;">Progesterone · Estradiol · Estriol · DHEA · Testosterone Cypionate/Enanthate</div>
+        <div style="font-size:0.9rem;color:var(--ink-2);font-weight:300;line-height:1.6;">Core bioidentical hormone replacement therapy staples. Multiple formulation routes. High-volume recurring compounding category.</div>
+      </div>
+      <!-- Men's Health card -->
+      <div style="background:var(--bg);padding:2rem;">
+        <div style="font-family:var(--mono);font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem;">Men's Health</div>
+        <div style="font-size:1rem;color:var(--ink);font-weight:500;margin-bottom:0.75rem;line-height:1.5;">Tadalafil · Sildenafil · Testosterone · Anastrozole</div>
+        <div style="font-size:0.9rem;color:var(--ink-2);font-weight:300;line-height:1.6;">Cash-pay dominant category. 503A eligible. Oral, troche, topical, and injectable delivery formats.</div>
+      </div>
+      <!-- Specialty card -->
+      <div style="background:var(--bg);padding:2rem;">
+        <div style="font-family:var(--mono);font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem;">Specialty &amp; Mental Health</div>
+        <div style="font-size:1rem;color:var(--ink);font-weight:500;margin-bottom:0.75rem;line-height:1.5;">Ketamine · Low-Dose Naltrexone · Oxytocin · Naloxone</div>
+        <div style="font-size:0.9rem;color:var(--ink-2);font-weight:300;line-height:1.6;">High-value specialty compounding APIs. Multiple administration routes. Fastest-growing segment in mental health compounding.</div>
+      </div>
+      <!-- Finished Pharma card -->
+      <div style="background:var(--bg);padding:2rem;">
+        <div style="font-family:var(--mono);font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem;">Finished Pharmaceuticals &amp; Supplies</div>
+        <div style="font-size:1rem;color:var(--ink);font-weight:500;margin-bottom:0.75rem;line-height:1.5;">Branded, generic &amp; specialty pharmaceuticals · Biologics including IVIG · Medical supplies · Controlled substances (DEA Schedule II–V)</div>
+        <div style="font-size:0.9rem;color:var(--ink-2);font-weight:300;line-height:1.6;">Full wholesale distribution for independent and specialty pharmacies. 1M+ products cataloged via MetaCommerceRx.</div>
+      </div>
+    </div>
+    <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;color:var(--ink-3);line-height:1.7;">All APIs are supplied for use under applicable state and federal compounding regulations (503A/503B). Full certificate of analysis, lot documentation, and import records provided with every order.</div>
+  </div>
+
+  <!-- SECTION 04 — FDA-CREDENTIALED SUPPLY (dark) -->
+  <div style="background:var(--hero-bg);padding:5rem 6vw;position:relative;overflow:hidden;">
+    <div class="grid-dk"></div>
+    <div style="position:relative;z-index:1;">
+      <div style="font-family:var(--mono);font-size:0.8rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:rgba(242,237,228,0.35);margin-bottom:1.75rem;">// 04 — FDA-Credentialed Supply</div>
+      <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--bg);max-width:760px;margin-bottom:1.5rem;">Green List sourced. Importer of record. Every node documented.</h2>
+      <div class="two-col" style="margin-bottom:3rem;">
+        <p style="font-size:1rem;line-height:1.8;font-weight:300;color:rgba(242,237,228,0.62);">For GLP-1 and peptide APIs, FDA Import Alert 66-80 has become the line between credible supply and regulatory risk. Green List status for an API manufacturer is now a binary purchase criterion for any serious compounding pharmacy.</p>
+        <p style="font-size:1rem;line-height:1.8;font-weight:300;color:rgba(242,237,228,0.62);">iRemedy sources GLP-1 APIs from FDA-registered, Green List manufacturers — and serves as the U.S. Importer of Record on every shipment. That means the documentation chain doesn't stop at a broker's letterhead. It runs from the cGMP manufacturing facility through FDA customs clearance, into UPS Healthcare's controlled cold chain, and onto your dock — with every node verified and every document on file.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(242,237,228,0.1);margin-bottom:2.5rem;">
+        <div style="padding:1.75rem;border-right:1px solid rgba(242,237,228,0.1);">
+          <div style="font-family:var(--mono);font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem;">FDA-Registered</div>
+          <div style="font-size:0.9rem;color:rgba(242,237,228,0.5);line-height:1.6;">Manufacturer FEI on file for every API</div>
+        </div>
+        <div style="padding:1.75rem;border-right:1px solid rgba(242,237,228,0.1);">
+          <div style="font-family:var(--mono);font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem;">Green List</div>
+          <div style="font-size:0.9rem;color:rgba(242,237,228,0.5);line-height:1.6;">Import Alert 66-80 compliance verified</div>
+        </div>
+        <div style="padding:1.75rem;border-right:1px solid rgba(242,237,228,0.1);">
+          <div style="font-family:var(--mono);font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem;">U.S. Importer of Record</div>
+          <div style="font-size:0.9rem;color:rgba(242,237,228,0.5);line-height:1.6;">iRemedy named on customs documentation</div>
+        </div>
+        <div style="padding:1.75rem;">
+          <div style="font-family:var(--mono);font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem;">Full CoA &amp; Lot Docs</div>
+          <div style="font-size:0.9rem;color:rgba(242,237,228,0.5);line-height:1.6;">Certificate of analysis on every shipment</div>
+        </div>
+      </div>
+      <button class="btn btn-teal" onclick="showPage('contact')">Request GLP-1 API Pricing →</button>
+    </div>
+  </div>
+
+  <!-- SECTION 05 — COLD CHAIN -->
+  <div style="background:var(--bg-3);padding:5rem 6vw;border-bottom:1px solid var(--rule);">
+    <div class="eyebrow">// 05 — Pharma-Grade Cold Chain</div>
+    <div class="two-col">
+      <div>
+        <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.25rem;">Lyophilized peptides at −20°C don't survive a standard courier.</h2>
+        <p class="sec-body">Peptide APIs require validated cold chain logistics — not a styrofoam box with a gel pack. iRemedy's fulfillment runs through UPS Healthcare, providing temperature-controlled storage and transport from warehouse to pharmacy. Ambient, refrigerated, frozen, and ultra-cold environments — monitored continuously, documented automatically.</p>
+        <p class="sec-body">This is the same logistics network used by the world's largest pharmaceutical manufacturers, deployed for compounding pharmacies that have historically been too small to access it.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1px;background:var(--border);align-self:start;">
+        <div style="background:var(--bg-2);padding:1.75rem 2rem;"><div style="font-family:var(--serif);font-size:1.8rem;font-weight:900;color:var(--teal);line-height:1;margin-bottom:0.4rem;">18M+</div><div style="font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.5;">sq ft cGMP/GDP warehouse space</div></div>
+        <div style="background:var(--bg-2);padding:1.75rem 2rem;"><div style="font-family:var(--serif);font-size:1.8rem;font-weight:900;color:var(--teal);line-height:1;margin-bottom:0.4rem;">−20°C</div><div style="font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.5;">Ambient to ultra-cold storage, continuously monitored</div></div>
+        <div style="background:var(--bg-2);padding:1.75rem 2rem;"><div style="font-family:var(--serif);font-size:1.8rem;font-weight:900;color:var(--teal);line-height:1;margin-bottom:0.4rem;">1–2 day</div><div style="font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.5;">Delivery to 95% of U.S. population</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 06 — BUILT FOR -->
+  <div style="background:var(--bg);padding:5rem 6vw;border-bottom:1px solid var(--rule);">
+    <div class="eyebrow">// 06 — Built For</div>
+    <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:3rem;">From single-location compounders to multi-site specialty operations.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);">
+      <div style="background:var(--bg-2);padding:2rem;"><div style="font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem;">503A Compounding Pharmacies</div><div style="font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.6;">Bulk APIs, peptides, GLP-1 agonists, BHRT, and specialty compounding ingredients with full chain-of-custody documentation. FDA-credentialed sourcing. Cold chain logistics.</div></div>
+      <div style="background:var(--bg-2);padding:2rem;"><div style="font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem;">503B Outsourcing Facilities</div><div style="font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.6;">Wholesale API supply and finished pharmaceutical distribution for outsourcing facilities producing sterile and non-sterile compounded preparations at commercial scale.</div></div>
+      <div style="background:var(--bg-2);padding:2rem;"><div style="font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem;">Independent Retail Pharmacies</div><div style="font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.6;">Wholesale pharmaceutical distribution with transparent pricing, no volume minimums, and no multi-year lock-in contracts. The same infrastructure large chains access — at your scale.</div></div>
+      <div style="background:var(--bg-2);padding:2rem;"><div style="font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem;">Specialty &amp; Mail-Order Pharmacies</div><div style="font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.6;">Multi-channel fulfillment for specialty pharmacy operations. DSCSA serialization, controlled substance distribution, and MetaCommerceRx order management.</div></div>
+      <div style="background:var(--bg-2);padding:2rem;"><div style="font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem;">Veterinary Compounding Pharmacies</div><div style="font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.6;">Bulk APIs and compounding ingredients for veterinary compounding operations. Same credentialed supply chain and cold chain logistics.</div></div>
+      <div style="background:var(--bg-2);padding:2rem;"><div style="font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem;">IV &amp; Wellness Clinics</div><div style="font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.6;">Peptide, NAD+, and specialty APIs for clinics operating under affiliated pharmacy licenses. Growing demand across longevity, regenerative medicine, and functional health.</div></div>
+    </div>
+  </div>
+
+  <!-- SECTION 07 — METACOMMERCERX -->
+  <div style="background:var(--bg-2);padding:5rem 6vw;border-bottom:1px solid var(--rule);">
+    <div class="eyebrow">// 07 — MetaCommerceRx</div>
+    <div class="two-col">
+      <div>
+        <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.25rem;">Order, track, and reorder — one platform.</h2>
+        <p class="sec-body">MetaCommerceRx gives pharmacy buyers a single procurement interface for APIs, finished pharmaceuticals, and supplies across multiple suppliers. Real-time inventory visibility, automated credential verification, DSCSA compliance on every transaction, and order tracking from warehouse to your dock.</p>
+        <button class="btn btn-ink" style="margin-top:1.5rem;" onclick="showPage('contact')">Request a Demo →</button>
+      </div>
+      <ul style="list-style:none;border-top:1px solid var(--border);align-self:start;">
+        <li style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border-2);font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.5;"><span style="color:var(--teal);font-family:var(--mono);font-size:0.68rem;flex-shrink:0;padding-top:3px;">→</span>Real-time API and pharmaceutical catalog with pricing and availability</li>
+        <li style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border-2);font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.5;"><span style="color:var(--teal);font-family:var(--mono);font-size:0.68rem;flex-shrink:0;padding-top:3px;">→</span>Automated DEA, NPI, and state pharmacy license verification</li>
+        <li style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border-2);font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.5;"><span style="color:var(--teal);font-family:var(--mono);font-size:0.68rem;flex-shrink:0;padding-top:3px;">→</span>DSCSA serialization — transaction history on every order</li>
+        <li style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border-2);font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.5;"><span style="color:var(--teal);font-family:var(--mono);font-size:0.68rem;flex-shrink:0;padding-top:3px;">→</span>Reorder automation for recurring API and pharmaceutical needs</li>
+        <li style="display:flex;gap:1rem;padding:1rem 0;font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.5;"><span style="color:var(--teal);font-family:var(--mono);font-size:0.68rem;flex-shrink:0;padding-top:3px;">→</span>Spend analytics and compliance reporting dashboards</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 08 — PEPTIDE DISTRIBUTION (teaser / visually distinct) -->
+  <div style="background:var(--bg);padding:5rem 6vw;border-bottom:1px solid var(--rule);border-left:4px solid var(--teal);">
+    <div style="font-family:var(--mono);font-size:0.8rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--teal);margin-bottom:1.75rem;">// Peptide Distribution</div>
+    <div class="two-col">
+      <div>
+        <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.25rem;">The credentialed source for U.S. compounding pharmacy peptide supply.</h2>
+        <p class="sec-body">iRemedy is building the definitive peptide distribution infrastructure for U.S. compounding pharmacies — combining FDA-credentialed API sourcing, validated cold chain logistics, and the compliance documentation that separates legitimate supply from regulatory risk.</p>
+        <p class="sec-body">GLP-1 agonists, BHRT hormones, wellness peptides, men's health, and specialty compounds — sourced from verified manufacturers, imported under iRemedy's credentials, stored and shipped through UPS Healthcare's pharma-grade network.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+          <button class="btn btn-teal" onclick="showPage('contact')">Join the Peptide Waitlist →</button>
+          <button class="btn btn-ghost" onclick="showPage('contact')">Contact Our Compounding Team →</button>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;">
+        <div style="background:var(--teal-dim);border:1px solid rgba(0,100,165,0.2);padding:2.5rem;width:100%;">
+          <div style="font-family:var(--mono);font-size:0.56rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;">Coming Soon</div>
+          <div style="font-family:var(--serif);font-size:1.5rem;font-weight:900;color:var(--ink);line-height:1.2;margin-bottom:0.75rem;">peptides.iremedy.com</div>
+          <div style="font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.7;">Dedicated peptide distribution hub and education platform — detailed API product information, regulatory guidance, clinical protocol resources, and direct ordering for compounding pharmacies.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 09 — TRANSPARENT PRICING -->
+  <div style="background:var(--bg-2);padding:5rem 6vw;border-bottom:1px solid var(--rule);">
+    <div class="eyebrow">// 09 — Transparent Pricing</div>
+    <div class="two-col">
+      <div>
+        <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.25rem;">No volume minimums. No lock-in contracts. Pricing you can see.</h2>
+        <p class="sec-body">iRemedy operates outside the traditional wholesale model that penalizes small and mid-size pharmacies with opaque markup structures and multi-year commitments. Every product shows a visible price. APIs are quoted with full documentation of source, lot, and import credentials included — not as an add-on.</p>
+      </div>
+      <div>
+        <p class="sec-body">Whether you're ordering a single gram of Tirzepatide API or building a recurring supply relationship across 50 compounding ingredients, the pricing model is the same: transparent, competitive, and documented.</p>
+        <button class="btn btn-ink" style="margin-top:1rem;" onclick="showPage('contact')">Request Pricing →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 10 — FAQ -->
+  <div style="background:var(--bg);padding:5rem 6vw;border-bottom:1px solid var(--rule);">
+    <div class="eyebrow">// 10 — Common Questions</div>
+    <details style="border-bottom:1px solid var(--border);padding:1.5rem 0;" open>
+      <summary style="font-family:var(--serif);font-size:1.125rem;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Does iRemedy supply GLP-1 APIs for compounding?<span style="font-family:var(--mono);font-size:0.7rem;color:var(--teal);flex-shrink:0;margin-left:1rem;">+</span></summary>
+      <p style="font-size:1rem;line-height:1.8;color:var(--ink-2);font-weight:300;margin-top:1rem;padding-right:2rem;">Yes. iRemedy supplies Tirzepatide, Semaglutide, and other GLP-1 agonist APIs for compounding under 503A and 503B. All GLP-1 APIs are sourced from FDA-registered, Green List manufacturers, and iRemedy serves as the U.S. Importer of Record. Full certificate of analysis, lot documentation, and import records are provided with every order.</p>
+    </details>
+    <details style="border-bottom:1px solid var(--border);padding:1.5rem 0;">
+      <summary style="font-family:var(--serif);font-size:1.125rem;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">How does iRemedy verify API source credentialing?<span style="font-family:var(--mono);font-size:0.7rem;color:var(--teal);flex-shrink:0;margin-left:1rem;">+</span></summary>
+      <p style="font-size:1rem;line-height:1.8;color:var(--ink-2);font-weight:300;margin-top:1rem;padding-right:2rem;">For every API — especially GLP-1s and peptides — iRemedy verifies the manufacturer's FDA registration (FEI number), Green List status under relevant Import Alerts, cGMP inspection history, and lot-specific certificate of analysis. iRemedy is named as U.S. Importer of Record on customs documentation, meaning the regulatory chain of custody runs through us, not through an offshore broker.</p>
+    </details>
+    <details style="border-bottom:1px solid var(--border);padding:1.5rem 0;">
+      <summary style="font-family:var(--serif);font-size:1.125rem;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">What cold chain capabilities does iRemedy have for peptides?<span style="font-family:var(--mono);font-size:0.7rem;color:var(--teal);flex-shrink:0;margin-left:1rem;">+</span></summary>
+      <p style="font-size:1rem;line-height:1.8;color:var(--ink-2);font-weight:300;margin-top:1rem;padding-right:2rem;">All peptide and temperature-sensitive APIs are stored and shipped through UPS Healthcare's pharma-grade cold chain network. This includes ambient, refrigerated (2–8°C), frozen (−20°C), and ultra-cold environments with continuous monitoring and documentation. This is validated pharmaceutical logistics — not consumer-grade courier.</p>
+    </details>
+    <details style="border-bottom:1px solid var(--border);padding:1.5rem 0;">
+      <summary style="font-family:var(--serif);font-size:1.125rem;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Can independent pharmacies buy from iRemedy without volume minimums?<span style="font-family:var(--mono);font-size:0.7rem;color:var(--teal);flex-shrink:0;margin-left:1rem;">+</span></summary>
+      <p style="font-size:1rem;line-height:1.8;color:var(--ink-2);font-weight:300;margin-top:1rem;padding-right:2rem;">Yes. iRemedy does not impose the volume minimums that traditional wholesalers require. The platform and pricing are accessible to single-location independents and multi-site operations alike.</p>
+    </details>
+    <details style="border-bottom:1px solid var(--border);padding:1.5rem 0;">
+      <summary style="font-family:var(--serif);font-size:1.125rem;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Is iRemedy a wholesale distributor or a broker?<span style="font-family:var(--mono);font-size:0.7rem;color:var(--teal);flex-shrink:0;margin-left:1rem;">+</span></summary>
+      <p style="font-size:1rem;line-height:1.8;color:var(--ink-2);font-weight:300;margin-top:1rem;padding-right:2rem;">iRemedy is a licensed wholesale distributor — DEA authorized, NABP accredited, licensed in all 50 states, and DSCSA compliant. We are not a broker. Products are warehoused, handled, and shipped through our own licensed infrastructure powered by UPS Healthcare.</p>
+    </details>
+    <details style="border-bottom:1px solid var(--border);padding:1.5rem 0;">
+      <summary style="font-family:var(--serif);font-size:1.125rem;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Does iRemedy distribute controlled substances?<span style="font-family:var(--mono);font-size:0.7rem;color:var(--teal);flex-shrink:0;margin-left:1rem;">+</span></summary>
+      <p style="font-size:1rem;line-height:1.8;color:var(--ink-2);font-weight:300;margin-top:1rem;padding-right:2rem;">Yes. iRemedy holds DEA licenses for Schedule II through V controlled substance distribution. All controlled substance orders include full DSCSA serialization and chain-of-custody documentation.</p>
+    </details>
+    <details style="padding:1.5rem 0;">
+      <summary style="font-family:var(--serif);font-size:1.125rem;font-weight:700;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">What is the peptides.iremedy.com site?<span style="font-family:var(--mono);font-size:0.7rem;color:var(--teal);flex-shrink:0;margin-left:1rem;">+</span></summary>
+      <p style="font-size:1rem;line-height:1.8;color:var(--ink-2);font-weight:300;margin-top:1rem;padding-right:2rem;">iRemedy is developing a dedicated peptide distribution hub and education platform at peptides.iremedy.com — featuring detailed API product information, regulatory guidance, clinical protocol resources, and direct ordering for compounding pharmacies. Contact our compounding team for early access.</p>
+    </details>
+  </div>
+
+  <!-- SECTION 11 — CTA (dark) -->
+  <div style="background:var(--hero-bg);padding:6rem 6vw;text-align:center;position:relative;overflow:hidden;">
+    <div class="grid-dk"></div>
+    <div style="position:relative;z-index:1;">
+      <h2 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--bg);margin-bottom:1.25rem;">Ready to source with confidence?</h2>
+      <p style="font-size:1rem;line-height:1.8;font-weight:300;color:rgba(242,237,228,0.62);max-width:540px;margin:0 auto 2.5rem;">Tell us what you compound and what you need. We'll provide pricing, documentation, and a sourcing plan — typically within 48 hours.</p>
+      <button class="btn btn-teal" style="margin-bottom:2rem;" onclick="showPage('contact')">Request Pricing →</button>
+      <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;color:rgba(242,237,228,0.35);">For compounding and API inquiries: compounding@iremedy.com</div>
+    </div>
+  </div>
+
   <footer><div style="padding:1.75rem 6vw;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--bg-2)"><span>© 2026 iRemedy Healthcare Companies, Inc.</span><a onclick="showPage('home')" style="color:var(--teal);cursor:pointer;">← Home</a></div></footer>
 </div>
 

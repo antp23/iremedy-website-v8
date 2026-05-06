@@ -11,12 +11,29 @@ Use these `CHG-XXX` numbers to reference specific states when picking up work ac
 
 ## Active State
 
-**Current:** CHG-018 — Manufacturers page international supplement
+**Current:** CHG-019 — Providers page full redesign
 **Date:** 2026-05-05
 
 ---
 
 ## Change History
+
+### CHG-019 — Providers page full redesign
+**Date:** 2026-05-05
+**Commit:** `fe4f90a`
+- Replaced thin 2-section placeholder with full 10-section procurement-brief page
+- Section 01: Hero — dark bg, headline, italic subheadline, proof strip, Request Pricing + See What We Distribute CTAs
+- Section 02: The Problem — two-col, GPO layer critique, callout (no rebate games / no hidden markups / no lock-in)
+- Section 03: iRemedy Direct — two-col 6-feature cap-list (transparent pricing, direct sourcing, full range, DSCSA, no GPO, COO transparency)
+- Section 04: Built For — 7-segment 3-col grid (hospitals, ASCs, 503A, 503B, independents, clinics, government)
+- Section 05: The Platform — dark bg, two-col, MetaCommerceRx body + 5 bullet features, Request a Demo CTA
+- Section 06: The GPO Question — strategic parallel-channel framing, callout pull-quote
+- Section 07: Fulfillment — bg-3, two-col with 3 stat blocks (18M+ sqft / 1–2 day / full cold chain)
+- Section 08: Trusted By — 500M units / Senate / 10 patents, 4-logo placeholder bar, testimonial placeholder
+- Section 09: FAQ — 7 provider-specific accordion Q&As
+- Section 10: CTA — dark bg, “See the pricing for yourself” + sales@iremedy.com
+
+---
 
 ### CHG-018 — Manufacturers page international supplement
 **Date:** 2026-05-05
