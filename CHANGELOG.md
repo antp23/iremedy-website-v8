@@ -11,12 +11,28 @@ Use these `CHG-XXX` numbers to reference specific states when picking up work ac
 
 ## Active State
 
-**Current:** CHG-023 — Leadership page headshots + full board populated
-**Date:** 2026-05-05
+**Current:** CHG-024 — Government page full redesign
+**Date:** 2026-05-06
 
 ---
 
 ## Change History
+
+### CHG-024 — Government page full redesign
+**Date:** 2026-05-06
+**Commit:** `da5306d`
+- Replaced 2-column placeholder with full 9-section capability brief
+- Section 01: Hero — dark bg, headline, italic subheadline, credential strip, two CTAs (TradeSpy Briefing + MIA Portfolio)
+- Section 02: The Exposure — body copy + 4 stat blocks (80% API overseas / 100K+ jobs lost / 300+ shortages / <10% inspected) + 4 red consequence cards
+- Section 03: TradeSpy — dark bg, 4 stat blocks (129,140 NDCs / 412 CCP flags / 89 Hormuz critical / 24/7), 6 capability blocks (COO verification, CCP mapping, geopolitical risk, domestic alternatives, OMB M-25-22, legislative intel)
+- Section 04: Made in America — reshoring economics argument, cost-stack waterfall visual (foreign 6-layer vs. iRemedy 3-layer), insight callout block
+- Section 05: The Portfolio (id=gov-mia) — friction-vs-solution two-column layout, scroll anchor from hero CTA
+- Section 06: Track Record — OWS prose + dark 3-column proof bar (OWS / Senate / White House OMB) + 3 domestic manufacturer cards (Oxford / GLVUS / Speranza)
+- Section 07: Capabilities — 6-card grid
+- Section 08: FAQ — 6 accordion Q&As (toggleFaq added)
+- Section 09: CTA — dark centered, two action buttons + tony@iremedy.com
+
+---
 
 ### CHG-023 — Leadership page headshots + full board populated
 **Date:** 2026-05-05
