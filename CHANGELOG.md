@@ -11,12 +11,30 @@ Use these `CHG-XXX` numbers to reference specific states when picking up work ac
 
 ## Active State
 
-**Current:** CHG-019 — Providers page full redesign
+**Current:** CHG-020 — Pharmacies page full redesign
 **Date:** 2026-05-05
 
 ---
 
 ## Change History
+
+### CHG-020 — Pharmacies page full redesign
+**Date:** 2026-05-05
+**Commit:** `860c052`
+- Replaced thin 2-section placeholder with full 11-section pharmacy-specific page
+- Section 01: Hero — dark bg, headline, italic subheadline, extended proof strip (Green List + UPS Healthcare Cold Chain), Request Pricing + API Catalog anchor CTAs
+- Section 02: Sourcing Problem — two-col, compounding crisis framing + independent pharmacy framing, callout block
+- Section 03: API Catalog — 3-col 6-card product grid; GLP-1 card has teal top border + "HIGH DEMAND" badge; all 6 categories with molecules listed
+- Section 04: FDA-Credentialed Supply — dark bg, two-col copy, 4 credential blocks (FDA-Registered / Green List / Importer of Record / CoA & Lot Docs), CTA
+- Section 05: Cold Chain — bg-3, two-col with 3 stat blocks (−20°C treatment)
+- Section 06: Built For — 3-col 6-segment grid (503A, 503B, independent, specialty/mail-order, vet, IV/wellness)
+- Section 07: MetaCommerceRx — two-col, 5 arrow-list features, demo CTA
+- Section 08: Peptide Hub Teaser — left teal border accent, two-col, peptides.iremedy.com "coming soon" callout card, two CTAs
+- Section 09: Transparent Pricing — two-col, no minimums / no lock-in framing
+- Section 10: FAQ — 7 pharmacy-specific Q&As (GLP-1, credentialing, cold chain, volume minimums, distributor vs broker, controlled substances, peptides subdomain)
+- Section 11: CTA — dark bg, 48-hour sourcing plan promise, compounding@iremedy.com
+
+---
 
 ### CHG-019 — Providers page full redesign
 **Date:** 2026-05-05
