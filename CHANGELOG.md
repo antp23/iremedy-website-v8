@@ -11,12 +11,27 @@ Use these `CHG-XXX` numbers to reference specific states when picking up work ac
 
 ## Active State
 
-**Current:** CHG-022 — Leadership page executive tile updates
+**Current:** CHG-023 — Leadership page headshots + full board populated
 **Date:** 2026-05-05
 
 ---
 
 ## Change History
+
+### CHG-023 — Leadership page headshots + full board populated
+**Date:** 2026-05-05
+**Commit:** `d0fa1ee`
+- Tony Paquin: real headshot added (assets/tony-paquin.jpg)
+- Anthony Paquin: real headshot added (assets/anthony-paquin.jpg)
+- Board of Directors: all 6 slots populated
+  - Leslie Bernhard: Director, Chair Nexalin (Nasdaq), former Revlon/Disney
+  - Kelly McCarthy: Director, CEO InfusionCapital, pediatric practice owner
+  - Obie McKenzie: Director, Vice Chair Cordiant Capital, former BlackRock MD
+  - Gary Paquin: Director, co-founder iRemedy & Agency One, Stanford/Harvard certified
+  - Dr. Tomas Philipson: Director, former White House CEA Chair, health economist
+  - Saul Factor: Director, name + title only (photo + bio pending)
+
+---
 
 ### CHG-022 — Leadership page executive tile updates
 **Date:** 2026-05-05
