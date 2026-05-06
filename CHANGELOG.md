@@ -11,12 +11,29 @@ Use these `CHG-XXX` numbers to reference specific states when picking up work ac
 
 ## Active State
 
-**Current:** CHG-016 — Logo replacement (nav + footer)
+**Current:** CHG-017 — Manufacturers page full redesign
 **Date:** 2026-05-05
 
 ---
 
 ## Change History
+
+### CHG-017 — Manufacturers page full redesign
+**Date:** 2026-05-05
+**Commit:** `0a15d50`
+- Replaced thin 2-section placeholder with full 10-section conversion page
+- Section 01: Hero — dark bg, headline, italic subheadline, proof strip, two CTAs (Get Started + See the Incubator anchor)
+- Section 02: The Gap — two-col body copy, callout "iRemedy closes that gap"
+- Section 03: Two Paths — Incubator card (full stack, pricing callout $5K–$15K) + DaaS card, side-by-side
+- Section 04: Infrastructure — dark bg, 4 stat blocks (18M+ sqft / 95% / 200+ / 24/7), supporting copy
+- Section 05: MetaCommerceRx — two-col with 5 numbered cap-list features, demo CTA
+- Section 06: Built For — two-col, 6 client type tiles in 2×3 grid
+- Section 07: Social Proof — 3-col client grid (Spectrum Medical, GLVUS, FlexGRIP, CathCare, Speranza + "your company here"), testimonial placeholder
+- Section 08: Process — 5-step cap-list + timeline callout card (2–6 weeks)
+- Section 09: FAQ — 7 manufacturer-specific accordion Q&As
+- Section 10: CTA — dark bg, full-width, Get Started + Anthony contact line
+
+---
 
 ### CHG-016 — Nav and footer logo replacement
 **Date:** 2026-05-05
