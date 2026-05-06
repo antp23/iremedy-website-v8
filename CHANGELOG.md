@@ -11,12 +11,22 @@ Use these `CHG-XXX` numbers to reference specific states when picking up work ac
 
 ## Active State
 
-**Current:** CHG-017 — Manufacturers page full redesign
+**Current:** CHG-018 — Manufacturers page international supplement
 **Date:** 2026-05-05
 
 ---
 
 ## Change History
+
+### CHG-018 — Manufacturers page international supplement
+**Date:** 2026-05-05
+**Commit:** `e45e3b0`
+- Section 02 (The Gap): Added distinct international framing paragraph (FDA registration, DEA, state licensing, customs complexity for foreign manufacturers)
+- Section 03 (Incubator card): Added credibility bridge callout block between bullet list and pricing line
+- Section 06 (Built For): Expanded international manufacturers tile to include China, India, Europe, Latin America specificity
+- New Section 06B (International Market Entry): Full dedicated section with headline, 2-col 6-feature cap-list, closing italic line, CTA; styled with `bg-3` background + left teal border accent
+
+---
 
 ### CHG-017 — Manufacturers page full redesign
 **Date:** 2026-05-05
