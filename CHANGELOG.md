@@ -11,12 +11,21 @@ Use these `CHG-XXX` numbers to reference specific states when picking up work ac
 
 ## Active State
 
-**Current:** CHG-021 — Fraud detection supplement (partial)
+**Current:** CHG-022 — Leadership page executive tile updates
 **Date:** 2026-05-05
 
 ---
 
 ## Change History
+
+### CHG-022 — Leadership page executive tile updates
+**Date:** 2026-05-05
+**Commit:** `3c0849e`
+- Tony Paquin: title → "Founder & Chief Executive Officer"; bio updated to short-form
+- Anthony Paquin: title → "Chief AI Officer"; bio updated to short-form
+- Amanda Somsy: title unchanged (CFO); bio updated to CMA-certified short-form; PHOTO PENDING SVG replaced with real headshot (assets/amanda-somsy.jpg)
+
+---
 
 ### CHG-021 — Fraud detection supplement (partial)
 **Date:** 2026-05-05
